@@ -54,34 +54,34 @@ RUN \
     && rm -rf /usr/src/*
 
 ### Install apt deps
-RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install \
+#RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install \
 ###  libraspberrypi-bin=1.20180328-1~nokernel1 libraspberrypi0=1.20180328-1~nokernel1 --allow-downgrades -y \
-  apt-utils \
-  build-essential \
-  libasound2-dev \
-  libffi-dev \
-  libssl-dev \
-  python-dev \
-  python-pip \
-  git \
-  alsa-base \
-  alsa-utils \
-  fbset \
-  kodi \
-  kodi-inputstream-adaptive \
-  libnss3 \
-  && rm -rf /var/lib/apt/lists/*
+#  apt-utils \
+#  build-essential \
+#  libasound2-dev \
+#  libffi-dev \
+#  libssl-dev \
+#  python-dev \
+#  python-pip \
+#  git \
+#  alsa-base \
+#  alsa-utils \
+#  fbset \
+#  kodi \
+#  kodi-inputstream-adaptive \
+#  libnss3 \
+#  && rm -rf /var/lib/apt/lists/*
 
 ### Configure for Kodi
-COPY ./rootfs/etc/services.d/kodi-smb/99-input.rules /etc/udev/rules.d/99-input.rules
-COPY ./rootfs/etc/services.d/kodi-smb/0-permissions.rules /etc/udev/rules.d/10-permissions.rules
-RUN addgroup --system input && \
-usermod -a -G audio root && \
-usermod -a -G video root && \
-usermod -a -G input root && \
-usermod -a -G dialout root && \
-usermod -a -G plugdev root && \
-usermod -a -G tty root
+#COPY ./rootfs/etc/services.d/kodi-smb/99-input.rules /etc/udev/rules.d/99-input.rules
+#COPY ./rootfs/etc/services.d/kodi-smb/0-permissions.rules /etc/udev/rules.d/10-permissions.rules
+#RUN addgroup --system input && \
+#usermod -a -G audio root && \
+#usermod -a -G video root && \
+#usermod -a -G input root && \
+#usermod -a -G dialout root && \
+#usermod -a -G plugdev root && \
+#usermod -a -G tty root
 
 # S6-Overlay
 WORKDIR /
