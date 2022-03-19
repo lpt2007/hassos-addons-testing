@@ -1,9 +1,9 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
-name: Example add-on
-version: "1.1.0"
-slug: example
-description: Example add-on
-url: "https://github.com/home-assistant/addons-example/tree/main/example"
+name: Kodi with samba share add-on
+version: "0.0.1"
+slug: kodi-smb
+description: Kodi with samba share add-on
+url: "https://github.com/lpt2007/hassos-addons-testing/tree/main/kodi-smb"
 arch:
   - armhf
   - armv7
@@ -12,7 +12,7 @@ arch:
   - i386
 init: false
 options:
-  message: "Hello world..."
+  message: "Hello to Kodi with samba..."
 schema:
   message: "str?"
-image: "ghcr.io/home-assistant/{arch}-addon-example"
+image: "ghcr.io/home-assistant/{arch}-addon-kodi-smb"
