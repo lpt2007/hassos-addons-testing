@@ -32,6 +32,8 @@ RUN \
         tzdata \
         curl \
         ca-certificates \
+        apt-utils \
+        git \
     \
     && curl -L -f -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-armhf.tar.gz" \
         | tar zxvf - -C / \
