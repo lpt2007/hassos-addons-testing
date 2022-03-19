@@ -15,4 +15,4 @@ options:
   message: "Hello to Kodi with samba..."
 schema:
   message: "str?"
-image: "ghcr.io/home-assistant/{arch}-addon-kodi-smb"
+image: "ghcr.io/home-assistant/{arch}-base-raspbian"
