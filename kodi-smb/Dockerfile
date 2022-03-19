@@ -51,10 +51,6 @@ RUN \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /usr/src/*
 
-# S6-Overlay
-WORKDIR /
-ENTRYPOINT ["/init"]
-
 ### Install apt deps
 RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install \
 ###  libraspberrypi-bin=1.20180328-1~nokernel1 libraspberrypi0=1.20180328-1~nokernel1 --allow-downgrades -y \
@@ -84,3 +80,7 @@ usermod -a -G input root && \
 usermod -a -G dialout root && \
 usermod -a -G plugdev root && \
 usermod -a -G tty root
+
+# S6-Overlay
+WORKDIR /
+ENTRYPOINT ["/init"]
