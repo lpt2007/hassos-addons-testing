@@ -6,10 +6,10 @@ description: Kodi with samba share add-on
 url: "https://github.com/lpt2007/hassos-addons-testing/tree/main/kodi-smb"
 arch:
   - armhf
-  - armv7
-  - aarch64
-  - amd64
-  - i386
+#  - armv7
+#  - aarch64
+#  - amd64
+#  - i386
 init: false
 options:
   message: "Hello to Kodi with samba..."
