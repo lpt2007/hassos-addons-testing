@@ -15,4 +15,4 @@ options:
   message: "Hello to Kodi with samba..."
 schema:
   message: "str?"
-image: "tianon/raspbian:bullseye"
+image: "ghcr.io/home-assistant/armhf-base-raspbian:buster"
