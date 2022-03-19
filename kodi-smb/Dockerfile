@@ -1,7 +1,8 @@
 ARG BUILD_FROM
 # armhf: tianon/raspbian:${VERSION}-slim
 
-FROM ${BUILD_FROM}
+#FROM ${BUILD_FROM}
+FROM ghcr.io/home-assistant/armhf-base-raspbian:bullseye
 
 # Default ENV
 ENV \
