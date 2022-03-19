@@ -1,6 +1,6 @@
 # Kodi with Samba Add-on: kodi-smb add-on
 
-_Example add-on to use as a blueprint for new add-ons._
+_Kodi with Samba add-on_
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
