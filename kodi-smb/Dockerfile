@@ -99,6 +99,8 @@ usermod -a -G dialout root && \
 usermod -a -G plugdev root && \
 usermod -a -G tty root
 
+RUN export LIBVA_DRIVER_NAME=v4l2_request
+
 ### Copy data for add-on and make right privilages
 COPY ./rootfs/etc/services.d/kodi-smb/run.sh /run.sh
 RUN chmod +x /run.sh
