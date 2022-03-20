@@ -43,6 +43,7 @@ RUN \
         alsa-base \
         alsa-utils \
         fbset \
+        libraspberrypi0 \
     \
     && curl -L -f -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-armhf.tar.gz" \
         | tar zxvf - -C / \
@@ -69,23 +70,6 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 \
 && apt-get update \
 && apt-get install -y kodi
 
-### Install apt deps
-#RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install \
-###  libraspberrypi-bin=1.20180328-1~nokernel1 libraspberrypi0=1.20180328-1~nokernel1 --allow-downgrades -y \
-#  apt-utils \
-#  build-essential \
-#  libasound2-dev \
-#  libffi-dev \
-#  libssl-dev \
-#  python-dev \
-#  python-pip \
-#  git \
-#  alsa-base \
-#  alsa-utils \
-#  fbset \
-#  kodi \
-#  kodi-inputstream-adaptive \
-#  libnss3 \
 #  && rm -rf /var/lib/apt/lists/*
 
 ### Configure for Kodi
