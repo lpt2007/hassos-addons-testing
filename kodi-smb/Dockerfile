@@ -88,6 +88,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 \
 #  libnss3 \
 #  && rm -rf /var/lib/apt/lists/*
 
+RUN usermod -a -G input kodi
 ### Configure for Kodi
 #COPY ./rootfs/etc/services.d/kodi-smb/99-input.rules /etc/udev/rules.d/99-input.rules
 #COPY ./rootfs/etc/services.d/kodi-smb/0-permissions.rules /etc/udev/rules.d/10-permissions.rules
