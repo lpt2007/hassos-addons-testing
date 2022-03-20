@@ -106,4 +106,4 @@ RUN chmod +x /run
 # S6-Overlay
 WORKDIR /
 #ENTRYPOINT ["/init"]
-ENTRYPOINT ["/bin/bash", "-c", "/run"]
+ENTRYPOINT ["/bin/bash", "-c", "./run"]
