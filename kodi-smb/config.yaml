@@ -8,8 +8,10 @@ arch:
   - armhf
   - armv7
 host_dbus: true
-#devices:
-#  - /dev/dri/
+devices:
+  - /dev/input/mouse0
+  - /dev/input/event0
+  - /dev/input/event1
 #full_access: true
 audio: true
 video: true
