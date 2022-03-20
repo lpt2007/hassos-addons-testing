@@ -13,7 +13,7 @@ host_dbus: true
 full_access: true
 audio: true
 video: true
-usb: true
+#usb: true
 init: false
 options:
   message: "Hello to Kodi with samba..."
