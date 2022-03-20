@@ -4,6 +4,14 @@
 
 - Start
 
+## 0.0.1a
+
+- Added basic kodi dependecies
+
+## 0.0.2a
+
+- Added kodi instalation
+
 ## coming soon 1.0.0
 
 - Initial release
