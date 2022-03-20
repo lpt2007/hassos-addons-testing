@@ -8,6 +8,8 @@ arch:
   - armhf
   - armv7
 host_dbus: true
+devices:
+  - /dev/dri/
 audio: true
 video: true
 usb: true
