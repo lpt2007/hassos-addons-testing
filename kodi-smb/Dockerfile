@@ -99,6 +99,11 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 \
 #usermod -a -G plugdev root && \
 #usermod -a -G tty root
 
+### Copy data for add-on and make right privilages
+COPY ./rootfs/etc/services.d/kodi-smb/run.sh /run.sh
+RUN chmod +x /run.sh
+
 # S6-Overlay
 WORKDIR /
-ENTRYPOINT ["/init"]
+#ENTRYPOINT ["/init"]
+ENTRYPOINT ["/bin/bash", "-c", "/run.sh"]
