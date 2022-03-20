@@ -17,3 +17,4 @@ bashio::log.info "${message:="Hello Kodi with Samba Share..."}"
 
 ## Run your program
 # exec my_program --with-params
+DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket /usr/bin/kodi-standalone
