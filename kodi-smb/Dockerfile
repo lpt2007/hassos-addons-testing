@@ -34,6 +34,15 @@ RUN \
         ca-certificates \
         apt-utils \
         git \
+        build-essential  \
+        libasound2-dev \
+        libffi-dev \
+        libssl-dev \
+        python-dev \
+        python3-pip \
+        alsa-base \
+        alsa-utils \
+        fbset \
     \
     && curl -L -f -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-armhf.tar.gz" \
         | tar zxvf - -C / \
