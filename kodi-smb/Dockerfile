@@ -88,17 +88,16 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 \
 #  libnss3 \
 #  && rm -rf /var/lib/apt/lists/*
 
-RUN usermod -a -G input root
 ### Configure for Kodi
-#COPY ./rootfs/etc/services.d/kodi-smb/99-input.rules /etc/udev/rules.d/99-input.rules
-#COPY ./rootfs/etc/services.d/kodi-smb/0-permissions.rules /etc/udev/rules.d/10-permissions.rules
-#RUN addgroup --system input && \
-#usermod -a -G audio root && \
-#usermod -a -G video root && \
-#usermod -a -G input root && \
-#usermod -a -G dialout root && \
-#usermod -a -G plugdev root && \
-#usermod -a -G tty root
+COPY ./rootfs/etc/services.d/kodi-smb/99-input.rules /etc/udev/rules.d/99-input.rules
+COPY ./rootfs/etc/services.d/kodi-smb/0-permissions.rules /etc/udev/rules.d/10-permissions.rules
+RUN addgroup --system input && \
+usermod -a -G audio root && \
+usermod -a -G video root && \
+usermod -a -G input root && \
+usermod -a -G dialout root && \
+usermod -a -G plugdev root && \
+usermod -a -G tty root
 
 ### Copy data for add-on and make right privilages
 COPY ./rootfs/etc/services.d/kodi-smb/run.sh /run.sh
