@@ -9,7 +9,7 @@ arch:
   - armv7
 host_dbus: true
 devices:
-  - /dev/ttyAMA0
+  - /dev/input/event0
 #full_access: true
 audio: true
 video: true
