@@ -61,7 +61,7 @@ RUN \
     && rm -rf /usr/src/*
     
 ### Install kodi
-RUN apt-get install -y kodi
+###RUN apt-get install -y kodi
 
 #  && rm -rf /var/lib/apt/lists/*
 
@@ -84,5 +84,5 @@ RUN chmod +x /run.sh
 
 # S6-Overlay
 WORKDIR /
-#ENTRYPOINT ["/init"]
-ENTRYPOINT ["/bin/bash", "-c", "/run.sh"]
+ENTRYPOINT ["/init"]
+#ENTRYPOINT ["/bin/bash", "-c", "/run.sh"]
