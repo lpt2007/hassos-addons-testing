@@ -84,5 +84,5 @@ RUN chmod +x /run.sh
 
 # S6-Overlay
 WORKDIR /
-ENTRYPOINT ["/init"]
-#ENTRYPOINT ["/bin/bash", "-c", "/run.sh"]
+#ENTRYPOINT ["/init"]
+ENTRYPOINT ["/bin/bash", "-c", "/run.sh"]
