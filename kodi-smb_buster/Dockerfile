@@ -61,7 +61,7 @@ RUN \
     && rm -rf /usr/src/*
     
 ### Install kodi
-###RUN apt-get install -y kodi
+RUN apt-get update && apt-get install -y kodi
 
 #  && rm -rf /var/lib/apt/lists/*
 
