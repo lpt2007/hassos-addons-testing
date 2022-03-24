@@ -1,8 +1,8 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
-name: Raspberry camera rtsp add-on
+name: Raspberry camera rtsp server add-on
 version: "0.0.1"
 slug: rpi-camera-rtsp
-description: Raspberry camera rtsp add-on
+description: Raspberry camera rtsp server add-on
 url: "https://github.com/lpt2007/hassos-addons-testing/tree/main/rpi-camera-rtsp"
 arch:
   - armhf
