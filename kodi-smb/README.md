@@ -1,6 +1,6 @@
-# Kodi with Samba Add-on: kodi-smb add-on
+# Kodi 19 with Samba Add-on: kodi-smb add-on
 
-_Kodi with Samba add-on_
+_Kodi 19 with Samba add-on_
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
