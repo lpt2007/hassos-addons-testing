@@ -1,8 +1,6 @@
 ARG BUILD_FROM
-# armhf: tianon/raspbian:${VERSION}-slim
 
 FROM ${BUILD_FROM}
-#FROM ghcr.io/home-assistant/armhf-base-raspbian:bullseye
 
 # Default ENV
 ENV \
@@ -64,11 +62,7 @@ RUN \
     && rm -rf /usr/src/*
     
 ### Install kodi
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 \
-&& sh -c "echo 'deb http://ftp.us.debian.org/debian/ bullseye main contrib non-free' >> /etc/apt/sources.list" \
-&& sh -c "echo 'deb http://deb.debian.org/debian bullseye main contrib non-free' >> /etc/apt/sources.list" \
-&& apt-get update \
-&& apt-get install -y kodi
+RUN apt-get install -y kodi
 
 #  && rm -rf /var/lib/apt/lists/*
 
