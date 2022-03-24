@@ -2,7 +2,6 @@
 name: Raspberry camera rtsp add-on
 version: "0.0.1"
 slug: rpi-camera-rtsp
-
 description: Raspberry camera rtsp add-on
 url: "https://github.com/lpt2007/hassos-addons-testing/tree/main/rpi-camera-rtsp"
 arch:
