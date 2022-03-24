@@ -11,6 +11,11 @@
 ## 0.0.2a
 
 - Added kodi instalation
+- Kodi 19.1 start normally 
+known bugs: 
+- usb keyboard and mouse not working)
+- video playbak is not optimaized
+tested on rpi2
 
 ## coming soon 1.0.0
 
