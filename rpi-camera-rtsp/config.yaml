@@ -12,4 +12,4 @@ options:
   message: "Raspberry camera rtsp add-on"
 schema:
   message: "str?"
-image: "itsiotdevice/{arch}-addon-rpi-camera-rtsp"
+###image: "itsiotdevice/{arch}-addon-rpi-camera-rtsp"
