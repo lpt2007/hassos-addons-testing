@@ -1,0 +1,22 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: Kodi with samba share add-on
+version: "0.0.2a"
+slug: kodi-smb
+description: Kodi with samba share add-on
+url: "https://github.com/lpt2007/hassos-addons-testing/tree/main/kodi-smb"
+arch:
+  - armhf
+  - armv7
+host_dbus: true
+devices:
+  - /dev/input/event0
+#full_access: true
+audio: true
+video: true
+usb: true
+init: false
+options:
+  message: "Hello to Kodi with samba..."
+schema:
+  message: "str?"
+#image: "ghcr.io/home-assistant/armhf-base-raspbian:bullseye"
