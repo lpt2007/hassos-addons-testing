@@ -1,7 +1,7 @@
 image: homeassistant/{arch}-base-raspbian
 shadow_repository: ghcr.io/home-assistant
 build_from:
-  armhf: "tianon/raspbian:bullseye"
+  armhf: "tianon/raspbian:buster"
 codenotary:
   signer: notary@home-assistant.io
 args:
