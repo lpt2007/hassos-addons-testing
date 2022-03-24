@@ -41,7 +41,6 @@ RUN \
         alsa-base \
         alsa-utils \
         fbset \
-        libraspberrypi0 \
     \
     && curl -L -f -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-armhf.tar.gz" \
         | tar zxvf - -C / \
