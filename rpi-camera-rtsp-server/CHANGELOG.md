@@ -4,6 +4,10 @@
 
 - Start
 
+## 0.0.1a
+
+- Working RTSP Server for RPI camera
+
 ## 1.0.0
 
 - Initial release coming soon
