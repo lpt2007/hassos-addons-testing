@@ -1,9 +1,9 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Raspberry camera rtsp server add-on
-version: "0.0.1"
-slug: rpi-camera-rtsp
-description: Raspberry camera rtsp server add-on
-url: "https://github.com/lpt2007/hassos-addons-testing/tree/main/rpi-camera-rtsp"
+version: "0.0.1a"
+slug: rpi-camera-rtsp-server
+description: RTSP stream from raspberry camera
+url: "https://github.com/lpt2007/hassos-addons-testing/tree/main/rpi-camera-rtsp-server"
 arch:
   - armhf
   - armv7
@@ -12,4 +12,4 @@ options:
   message: "Raspberry camera rtsp add-on"
 schema:
   message: "str?"
-###image: "itsiotdevice/{arch}-addon-rpi-camera-rtsp"
+image: "itsiotdevice/{arch}-addon-rpi-camera-rtsp-server"
