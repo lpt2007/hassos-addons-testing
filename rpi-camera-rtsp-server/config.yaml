@@ -8,8 +8,11 @@ arch:
   - armhf
   - armv7
 init: false
-options:
-  message: "Raspberry camera rtsp add-on"
+ports:
+  8554/tcp: null
+ports_description:
+  8554/tcp: Web interface (Not required for Ingress)
+video: true
 schema:
   message: "str?"
 image: "itsiotdevice/rpi-camera-rtsp-server"
