@@ -41,7 +41,4 @@ COPY rposConfig.json /data/rpos/
 COPY run.sh /
 RUN chmod a+x /run.sh
 
-# So let's set it to our add-on persistent / directory.
-WORKDIR / 
-
 CMD [ "sh /run.sh" ]
