@@ -20,7 +20,8 @@ RUN npm install -g n \
 RUN git clone https://github.com/BreeeZe/rpos.git \
     && cd rpos \
     && npm install
-RUN npx gulp
+RUN npm install -g gulp
+RUN npm install gulp
 #    && sh setup_v4l2rtspserver.sh
     
 # instal v4l2rtspserver
