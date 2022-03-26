@@ -41,4 +41,4 @@ COPY rposConfig.json /data/rpos/
 COPY run.sh /
 RUN chmod a+x /run.sh
 
-CMD [ "sh /run.sh" ]
+CMD [ "run.sh" ]
