@@ -1,4 +1,4 @@
-name: "Raspberry camera onvif server add-on"
+name: "Raspberry camera ONVIF server add-on"
 description: "ONVIF server from raspberry pi camera"
 version: "0.0.1a"
 slug: "rpi-camera-rtsp-server-onvif"
