@@ -2,9 +2,9 @@ FROM ghcr.io/home-assistant/armhf-base-raspbian:bullseye
 
 # Install requirements for add-on
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    cmake \
-    git
+    nodejs \
+    npm \
+    liblivemedia-dev
     
 # So let's set it to our add-on persistent data directory.
 WORKDIR /data
