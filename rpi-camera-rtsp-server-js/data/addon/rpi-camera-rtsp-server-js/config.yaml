@@ -1,0 +1,12 @@
+name: "Raspberry camera rtsp server add-on"
+description: "RTSP stream from raspberry camera"
+version: "0.0.1a"
+slug: "rpi-camera-rtsp-server"
+arch:
+  - armhf
+  - armv7
+ports:
+  8554/tcp: null
+ports_description:
+  8554/tcp: Web interface (Not required for Ingress)
+video: true
