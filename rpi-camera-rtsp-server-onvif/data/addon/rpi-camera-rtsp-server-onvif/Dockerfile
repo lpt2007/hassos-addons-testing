@@ -42,4 +42,4 @@ COPY run.sh /
 RUN chmod a+x /run.sh
 
 #CMD [ "/run.sh" ]
-ENTRYPOINT ["/bin/bash", "-c", "/run.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "sh /run.sh"]
