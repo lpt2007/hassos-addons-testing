@@ -83,6 +83,16 @@ usermod -a -G dialout root && \
 usermod -a -G plugdev root && \
 usermod -a -G tty root
 
+RUN tee -a /etc/udev/rules.d/998-fix-input.rules <<_EOF_
+# input
+KERNEL=="mouse*|mice|event*",   MODE="0660", GROUP="input"
+KERNEL=="ts[0-9]*|uinput",      MODE="0660", GROUP="input"
+KERNEL=="js[0-9]*",             MODE="0660", GROUP="input"
+
+# tty
+SUBSYSTEM=="tty", KERNEL=="tty[0-9]*", GROUP="tty", MODE="0666"
+_EOF_
+
 RUN export LIBVA_DRIVER_NAME=v4l2_request
 
 ### Copy data for add-on and make right privilages
