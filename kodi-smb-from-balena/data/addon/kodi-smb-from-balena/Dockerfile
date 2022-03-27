@@ -29,8 +29,8 @@ RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install \
   && rm -rf /var/lib/apt/lists/*
 
 # Configure for Kodi
-COPY ./Dockerbin/99-input.rules /etc/udev/rules.d/99-input.rules
-COPY ./Dockerbin/10-permissions.rules /etc/udev/rules.d/10-permissions.rules
+COPY ./99-input.rules /etc/udev/rules.d/99-input.rules
+COPY ./10-permissions.rules /etc/udev/rules.d/10-permissions.rules
 RUN addgroup --system input && \
 usermod -a -G audio root && \
 usermod -a -G video root && \
@@ -43,7 +43,7 @@ usermod -a -G tty root
 RUN npm config set unsafe-perm true
 
 # Uncomment if you want to Configure for pHAT DAC
-# COPY ./Dockerbin/asound.conf /etc/asound.conf
+# COPY ./asound.conf /etc/asound.conf
 
 # Save source folder
 RUN printf "%s\n" "${PWD##}" > SOURCEFOLDER
