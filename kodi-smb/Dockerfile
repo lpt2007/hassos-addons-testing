@@ -73,7 +73,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 \
 #  && rm -rf /var/lib/apt/lists/*
 
 ### Configure for Kodi
-#COPY ./rootfs/etc/services.d/kodi-smb/99-input.rules /etc/udev/rules.d/99-input.ruetc/services.d/kodi-smb/99-input.rules /etc/udev/rules.d/99-input.rules
+COPY ./data/998-fix-input.rules /etc/udev/rules.d/998-fix-input.rules
 COPY ./rootfs/etc/services.d/kodi-smb/10-permissions.rules /etc/udev/rules.d/10-permissions.rules
 RUN addgroup --system input && \
 usermod -a -G audio root && \
