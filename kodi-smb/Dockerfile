@@ -1,5 +1,5 @@
-FROM ${BUILD_FROM}
-#FROM ghcr.io/home-assistant/armhf-base-raspbian:bullseye
+#FROM ${BUILD_FROM}
+FROM ghcr.io/home-assistant/armhf-base-raspbian:bullseye
 
 # Base system
 WORKDIR /usr/src
