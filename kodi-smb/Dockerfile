@@ -1,25 +1,5 @@
-ARG BUILD_FROM
-# armhf: tianon/raspbian:${VERSION}-slim
-
 FROM ${BUILD_FROM}
 #FROM ghcr.io/home-assistant/armhf-base-raspbian:bullseye
-
-# Default ENV
-ENV \
-    LANG="C.UTF-8" \
-    DEBIAN_FRONTEND="noninteractive" \
-    CURL_CA_BUNDLE="/etc/ssl/certs/ca-certificates.crt" \
-    S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
-    S6_CMD_WAIT_FOR_SERVICES=1
-
-# Set shell
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-# Version
-ARG \
-    BASHIO_VERSION \
-    TEMPIO_VERSION \
-    S6_OVERLAY_VERSION
 
 # Base system
 WORKDIR /usr/src
