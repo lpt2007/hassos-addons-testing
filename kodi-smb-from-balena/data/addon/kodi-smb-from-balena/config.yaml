@@ -1,0 +1,12 @@
+name: "Raspberry camera ONVIF server add-on"
+description: "ONVIF server from raspberry pi camera"
+version: "0.0.1a"
+slug: "rpi-camera-rtsp-server-onvif"
+arch:
+  - armhf
+  - armv7
+ports:
+  8554/tcp: 8554
+ports_description:
+  8554/tcp: Web interface (Not required for Ingress)
+video: true
