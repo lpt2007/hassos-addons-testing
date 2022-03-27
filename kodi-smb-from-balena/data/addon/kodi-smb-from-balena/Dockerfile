@@ -20,7 +20,7 @@ RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install \
   python-dev \
   python-pip \
   git \
-  alsa-base \
+###  alsa-base \
   alsa-utils \
   fbset \
   kodi \
