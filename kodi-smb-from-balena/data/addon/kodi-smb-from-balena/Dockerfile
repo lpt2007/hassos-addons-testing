@@ -1,5 +1,5 @@
 # see https://hub.docker.com/r/balenalib/raspberry-pi-node/tags
-FROM balenalib/balenalib/armv7hf-node:latest-stretch-run
+FROM balenalib/armv7hf-node:latest-stretch-run
 
 # 1.Install wget and curl.  Only wget is needed for downloading repository.sandmann79.plugins-1.0.2.zip
 ###RUN apt-get clean && apt-get update && apt-get install -y \
