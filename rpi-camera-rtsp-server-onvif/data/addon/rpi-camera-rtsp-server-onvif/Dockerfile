@@ -42,7 +42,8 @@ COPY rposConfig.json /data/rpos/
 COPY run.sh /
 RUN chmod a+x /run.sh
 
-CMD [ "/run.sh" ]
+CMD ["/bin/sh","/run.sh"]
+#CMD [ "/run.sh" ]
 #ENTRYPOINT ["/bin/bash", "-c", "sh /run.sh"]
 #ENTRYPOINT ["/data/rpos", "-c", "sh /run.sh"]
 #CMD ["/usr/local/bin/node","/data/rpos/rpos.js"]
