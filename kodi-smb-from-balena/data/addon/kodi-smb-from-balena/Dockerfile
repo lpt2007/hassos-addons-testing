@@ -2,12 +2,12 @@
 FROM balenalib/balenalib/armv7hf-node:latest-stretch-run
 
 # 1.Install wget and curl.  Only wget is needed for downloading repository.sandmann79.plugins-1.0.2.zip
-RUN apt-get clean && apt-get update && apt-get install -y \
-  wget \
-  curl
+###RUN apt-get clean && apt-get update && apt-get install -y \
+###  wget \
+###  curl
 
 # 2. wget sandmann79 plugins repository (needed to install amazon VOD plug-in)
-RUN  wget https://github.com/Sandmann79/xbmc/releases/download/v1.0.2/repository.sandmann79.plugins-1.0.2.zip
+###RUN  wget https://github.com/Sandmann79/xbmc/releases/download/v1.0.2/repository.sandmann79.plugins-1.0.2.zip
 
 # Install apt deps
 RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install \
@@ -29,8 +29,8 @@ RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install \
   && rm -rf /var/lib/apt/lists/*
 
 # Configure for Kodi
-COPY ./99-input.rules /etc/udev/rules.d/99-input.rules
-COPY ./10-permissions.rules /etc/udev/rules.d/10-permissions.rules
+COPY 99-input.rules /etc/udev/rules.d/99-input.rules
+COPY 10-permissions.rules /etc/udev/rules.d/10-permissions.rules
 RUN addgroup --system input && \
 usermod -a -G audio root && \
 usermod -a -G video root && \
@@ -62,6 +62,9 @@ usermod -a -G tty root
 
 # Move to /
 WORKDIR /
+
+COPY start.sh /
+RUN chmod a+x /start.sh
 
 ## uncomment if you want systemd
 ###ENV INITSYSTEM on
