@@ -21,7 +21,7 @@ RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install \
   python-pip \
   git \
 ###  alsa-base \
-  alsa-utils \
+###  alsa-utils \
   fbset \
   kodi \
 ###  kodi-inputstream-adaptive \
