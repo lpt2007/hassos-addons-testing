@@ -40,31 +40,31 @@ usermod -a -G plugdev root && \
 usermod -a -G tty root
 
 # Set npm
-RUN npm config set unsafe-perm true
+###RUN npm config set unsafe-perm true
 
 # Uncomment if you want to Configure for pHAT DAC
 # COPY ./asound.conf /etc/asound.conf
 
 # Save source folder
-RUN printf "%s\n" "${PWD##}" > SOURCEFOLDER
+###RUN printf "%s\n" "${PWD##}" > SOURCEFOLDER
 
 # Move to app dir
-WORKDIR /usr/src/app
+###WORKDIR /usr/src/app
 
 # Move package.json to filesystem
-COPY "$SOURCEFOLDER/app/package.json" ./
+###COPY "$SOURCEFOLDER/app/package.json" ./
 
 # NPM i app
-RUN JOBS=MAX npm i --production
+###RUN JOBS=MAX npm i --production
 
 # Move app and advancedsetting.xml to filesystem
-COPY "$SOURCEFOLDER/app" ./
+###COPY "$SOURCEFOLDER/app" ./
 
 # Move to /
 WORKDIR /
 
 ## uncomment if you want systemd
-ENV INITSYSTEM on
+###ENV INITSYSTEM on
 
 # Start app
-CMD ["bash", "/usr/src/app/start.sh"]
+CMD ["bash", "/start.sh"]
