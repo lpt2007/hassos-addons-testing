@@ -11,7 +11,7 @@ FROM balenalib/armv7hf-node:latest-stretch-run
 
 # Install apt deps
 RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install \
-  libraspberrypi-bin=1.20180328-1~nokernel1 libraspberrypi0=1.20180328-1~nokernel1 --allow-downgrades -y \
+###  libraspberrypi-bin=1.20180328-1~nokernel1 libraspberrypi0=1.20180328-1~nokernel1 --allow-downgrades -y \
   apt-utils \
   build-essential \
   libasound2-dev \
@@ -24,7 +24,7 @@ RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install \
   alsa-utils \
   fbset \
   kodi \
-  kodi-inputstream-adaptive \
+###  kodi-inputstream-adaptive \
   libnss3 \
   && rm -rf /var/lib/apt/lists/*
 
