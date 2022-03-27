@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
     liblivemedia-dev \
     liblog4cpp5-dev \
     cmake \
-    libasound2-dev
+    libasound2-dev \
+    v4l-utils
     
 # So let's set it to our add-on persistent data directory.
 WORKDIR /data
