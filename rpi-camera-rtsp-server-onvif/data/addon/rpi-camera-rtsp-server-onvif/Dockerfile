@@ -45,6 +45,7 @@ COPY rposConfig.json /data/rpos/
 COPY run /etc/services.d/rpos/run
 COPY finish /etc/services.d/rpos/finish
 
+ENTRYPOINT ["bash"]
 #ENTRYPOINT ["/init"]
 #CMD [ "/run.sh" ]
 #CMD ["/bin/sh","/run.sh"]
