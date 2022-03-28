@@ -10,4 +10,3 @@ ports:
 ports_description:
   8554/tcp: Web interface (Not required for Ingress)
 video: true
-init: false
