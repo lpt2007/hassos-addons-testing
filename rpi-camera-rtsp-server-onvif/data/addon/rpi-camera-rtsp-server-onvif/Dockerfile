@@ -42,7 +42,7 @@ RUN git clone https://github.com/mpromonet/v4l2rtspserver.git \
 #COPY run.sh /
 #RUN chmod a+x /run.sh
 
-#ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/init"]
 #CMD [ "/run.sh" ]
 #CMD ["/bin/sh","/run.sh"]
 #CMD [ "/run.sh" ]
