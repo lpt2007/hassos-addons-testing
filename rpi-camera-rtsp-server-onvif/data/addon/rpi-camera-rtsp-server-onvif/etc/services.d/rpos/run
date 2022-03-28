@@ -1,4 +1,6 @@
 #!/usr/bin/with-contenv bashio
 echo "$( date +'%Y/%m/%d %H:%M:%S' ) Starting Rpos"
-cd /data/rpos
-exec  /usr/local/bin/node /data/rpos/rpos.js
+#cd /data/rpos
+#exec  /usr/local/bin/node /data/rpos/rpos.js
+
+exec bash -c "cd /data/rpos;node rpos.js"
