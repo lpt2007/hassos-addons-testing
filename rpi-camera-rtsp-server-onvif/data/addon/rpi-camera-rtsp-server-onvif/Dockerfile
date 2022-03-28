@@ -41,7 +41,7 @@ RUN git clone https://github.com/mpromonet/v4l2rtspserver.git \
 #COPY rposConfig.json /data/rpos/
 #COPY run.sh /
 #RUN chmod a+x /run.sh
-
+COPY rposConfig.json /data/rpos/
 COPY run /etc/services.d/rpos/run
 COPY finish /etc/services.d/rpos/finish
 
