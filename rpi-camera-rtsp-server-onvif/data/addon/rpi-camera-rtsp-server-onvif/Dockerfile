@@ -45,11 +45,11 @@ COPY rposConfig.json /data/rpos/
 COPY run /etc/services.d/rpos/run
 COPY finish /etc/services.d/rpos/finish
 
-ENTRYPOINT ["bash"]
-#ENTRYPOINT ["/init"]
+#ENTRYPOINT ["bash"]
+ENTRYPOINT ["/init"]
 #CMD [ "/run.sh" ]
 #CMD ["/bin/sh","/run.sh"]
 #CMD [ "/run.sh" ]
 #ENTRYPOINT ["/bin/bash", "-c", "sh /run.sh"]
 #ENTRYPOINT ["/data/rpos", "-c", "sh /run.sh"]
-CMD ["node","rpos.js"]
+#CMD ["node","rpos.js"]
