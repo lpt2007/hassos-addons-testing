@@ -21,10 +21,11 @@ RUN npm install -g n \
 RUN git clone https://github.com/BreeeZe/rpos.git \
     && cd rpos \
     && npm install
-RUN npx gulp
 
 # So let's set it to our add-on persistent data/rpos directory.
 WORKDIR /elits/rpos 
+
+RUN npx gulp
     
 # instal v4l2rtspserver
 RUN git clone https://github.com/mpromonet/v4l2rtspserver.git \
