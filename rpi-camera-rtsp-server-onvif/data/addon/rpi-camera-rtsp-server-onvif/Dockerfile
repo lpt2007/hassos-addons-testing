@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     v4l-utils
     
 # So let's set it to our add-on persistent data directory.
-WORKDIR /data
+WORKDIR /elits
 
 # install onvif server
 # install npm and node.js (latest 17 in 26.3.22)
@@ -21,14 +21,10 @@ RUN npm install -g n \
 RUN git clone https://github.com/BreeeZe/rpos.git \
     && cd rpos \
     && npm install
-    
-# So let's set it to our add-on persistent data/rpos directory.
-WORKDIR /data/rpos 
-
 RUN npx gulp
-#RUN npm install -g gulp
-#RUN npm install gulp
-#    && sh setup_v4l2rtspserver.sh
+
+# So let's set it to our add-on persistent data/rpos directory.
+WORKDIR /elits/rpos 
     
 # instal v4l2rtspserver
 RUN git clone https://github.com/mpromonet/v4l2rtspserver.git \
@@ -38,18 +34,8 @@ RUN git clone https://github.com/mpromonet/v4l2rtspserver.git \
     && make install
 
 # Copy data for add-on
-#COPY rposConfig.json /data/rpos/
-#COPY run.sh /
-#RUN chmod a+x /run.sh
-COPY rposConfig.json /data/rpos/
+COPY rposConfig.json /elits/rpos/
 COPY run /etc/services.d/rpos/run
 COPY finish /etc/services.d/rpos/finish
 
-#ENTRYPOINT ["bash"]
 ENTRYPOINT ["/init"]
-#CMD [ "/run.sh" ]
-#CMD ["/bin/sh","/run.sh"]
-#CMD [ "/run.sh" ]
-#ENTRYPOINT ["/bin/bash", "-c", "sh /run.sh"]
-#ENTRYPOINT ["/data/rpos", "-c", "sh /run.sh"]
-#CMD ["node","rpos.js"]
