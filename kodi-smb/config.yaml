@@ -10,7 +10,7 @@ arch:
 host_dbus: true
 devices:
   - /dev/input/event0
-#full_access: true
+full_access: true
 audio: true
 video: true
 usb: true
