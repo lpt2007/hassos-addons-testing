@@ -23,6 +23,3 @@ homeassistant:
     - aarch64
     - amd64
     - armv7
-  # The list of required repositories
-  addons:
-    - https://github.com/home-assistant/hassio-addons
