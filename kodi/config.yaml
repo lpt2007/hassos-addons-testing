@@ -32,6 +32,9 @@ devices:
   - /dev/dri
   - /dev/fb0
   - /dev/snd
+# Define the environment variables for the add-on
+env_vars:
+  DISPLAY: ":0"
 options:
   audio_output: ALSA
   video_output: EGL
