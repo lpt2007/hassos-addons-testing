@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM homeassistant/amd64-base-python:3.9-alpine
+FROM python:3.9-alpine
 
 ENV LANG C.UTF-8
 
