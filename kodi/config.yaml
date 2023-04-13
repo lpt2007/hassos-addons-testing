@@ -5,11 +5,9 @@ name: Kodi GUI
 version: 1.0.0
 description: A Home Assistant addon to run Kodi media player in GUI mode.
 arch:
-  - armhf
-  - armv7
   - aarch64
   - amd64
-  - i386
+  - armv7
 repository: https://github.com/example/kodi-gui-addon
 dockerhub: example/kodi-gui-addon
 homeassistant:
@@ -22,11 +20,9 @@ homeassistant:
     - kodi
   # The list of supported architectures
   target:
-    - armhf
-    - armv7
     - aarch64
     - amd64
-    - i386
+    - armv7
   # The list of required repositories
   addons:
     - https://github.com/home-assistant/hassio-addons
