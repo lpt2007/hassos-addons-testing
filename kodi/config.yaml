@@ -30,3 +30,14 @@ homeassistant:
 options:
   audio_output: ALSA
   video_output: EGL
+config:
+  # Home Assistant integration
+  mqtt: true
+
+  # Kodi settings
+  enable-webserver: true
+  http-port: 8080
+  allow-remote-control: true
+  zeroconf: true
+
+log_level: info
