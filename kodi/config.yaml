@@ -1,0 +1,32 @@
+# config.yaml
+
+slug: kodi-gui
+name: Kodi GUI
+version: 1.0.0
+description: A Home Assistant addon to run Kodi media player in GUI mode.
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+repository: https://github.com/example/kodi-gui-addon
+dockerhub: example/kodi-gui-addon
+homeassistant:
+  # The latest version of Home Assistant
+  version: "2022.2.2"
+  # The version of the Supervisor
+  supervisor: "2022.02.0"
+  # The list of required services
+  services:
+    - kodi
+  # The list of supported architectures
+  target:
+    - armhf
+    - armv7
+    - aarch64
+    - amd64
+    - i386
+  # The list of required repositories
+  addons:
+    - https://github.com/home-assistant/hassio-addons
