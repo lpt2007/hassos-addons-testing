@@ -1,28 +1,67 @@
-# config.yaml
+# Config file for Kodi add-on
 
-slug: kodi-gui
-name: Kodi GUI
-version: 1.0.0
-description: A Home Assistant addon to run Kodi media player in GUI mode.
+# Define the version of the add-on
+version: "1.0.0a"
+
+# Define the name of the add-on
+name: "Kodi GUI"
+
+# Define the slug of the add-on
+slug: "kodi-gui"
+
+# Define the description of the add-on
+description: "This add-on allows you to run Kodi media player in GUI mode."
+
+# Define the URL of the add-on repository
+url: "https://github.com/lpt2007/hassos-addons-testing"
+
+# Define the author of the add-on
+author: "ELITS"
+
+# Define the architecture(s) that the add-on supports
 arch:
-  - aarch64
   - amd64
   - armv7
-repository: https://github.com/example/kodi-gui-addon
-dockerhub: example/kodi-gui-addon
-homeassistant:
-  # The latest version of Home Assistant
-  version: "2022.2.2"
-  # The version of the Supervisor
-  supervisor: "2022.02.0"
-  # The list of required services
-  services:
-    - kodi
-  # The list of supported architectures
-  target:
-    - aarch64
-    - amd64
-    - armv7
-  # The list of required repositories
-  addons:
-    - https://github.com/home-assistant/hassio-addons
+  - aarch64
+
+# Define the required system packages for the add-on
+system_packages:
+  - xorg-server
+  - mesa-dri-intel
+  - mesa-dri-nouveau
+  - mesa-dri-radeon
+  - alsa-lib
+  - pulseaudio
+  - xrandr
+
+# Define the devices required by the add-on
+devices:
+  - /dev/dri
+  - /dev/fb0
+  - /dev/snd
+
+# Define the environment variables for the add-on
+env_vars:
+  DISPLAY: ":0"
+
+# Define the ports required by the add-on
+ports:
+  - 8080/tcp
+
+# Define the services provided by the add-on
+services:
+  - kodi
+
+# Define the options for the kodi service
+kodi:
+  image: kodi
+  network_mode: host
+  privileged: true
+  volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /etc/timezone:/etc/timezone:ro
+    - /run/user/1000/pulse:/run/user/1000/pulse
+    - /tmp/.X11-unix:/tmp/.X11-unix
+  devices:
+    - /dev/input:/dev/input
+
