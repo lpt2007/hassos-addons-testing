@@ -2,7 +2,7 @@
 
 slug: kodi-gui
 name: Kodi GUI
-version: 1.0.0a
+version: 1.0.01a
 description: A Home Assistant addon to run Kodi media player in GUI mode.
 # Define the URL of the add-on repository
 url: https://github.com/lpt2007/hassos-addons-testing
@@ -27,6 +27,11 @@ homeassistant:
     - aarch64
     - amd64
     - armv7
+# Define the devices required by the add-on
+devices:
+  - /dev/dri
+  - /dev/fb0
+  - /dev/snd
 options:
   audio_output: ALSA
   video_output: EGL
