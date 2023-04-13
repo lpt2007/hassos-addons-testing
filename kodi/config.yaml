@@ -1,38 +1,28 @@
-name: Kodi Media Player
-version: 1.0.0a
-slug: kodi-media-player
-description: Kodi Media Player add-on for Home Assistant
-url: https://github.com/USERNAME/kodi-media-player-addon
-documentation: https://github.com/USERNAME/kodi-media-player-addon/blob/main/README.md
+# config.yaml
+
+slug: kodi-gui
+name: Kodi GUI
+version: 1.0.0
+description: A Home Assistant addon to run Kodi media player in GUI mode.
 arch:
+  - aarch64
   - amd64
   - armv7
-  - aarch64
-
-docker:
-  image: linuxserver/kodi
-  network_mode: host
-
-hosts:
-  - core-ssh
-
-ports:
-  8080/tcp:
-    name: Kodi HTTP
-    description: Kodi HTTP port
-
-options:
-  audio_output: ALSA
-  video_output: EGL
-
-config:
-  # Home Assistant integration
-  mqtt: true
-
-  # Kodi settings
-  enable-webserver: true
-  http-port: 8080
-  allow-remote-control: true
-  zeroconf: true
-
-log_level: info
+repository: https://github.com/example/kodi-gui-addon
+dockerhub: example/kodi-gui-addon
+homeassistant:
+  # The latest version of Home Assistant
+  version: "2022.2.2"
+  # The version of the Supervisor
+  supervisor: "2022.02.0"
+  # The list of required services
+  services:
+    - kodi
+  # The list of supported architectures
+  target:
+    - aarch64
+    - amd64
+    - armv7
+  # The list of required repositories
+  addons:
+    - https://github.com/home-assistant/hassio-addons
