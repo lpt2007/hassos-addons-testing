@@ -27,11 +27,6 @@ homeassistant:
     - aarch64
     - amd64
     - armv7
-ports:
-  8080/tcp:
-    name: Kodi HTTP
-    description: Kodi HTTP port
-
 options:
   audio_output: ALSA
   video_output: EGL
