@@ -3,6 +3,13 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.2.2
 FROM ${BUILD_FROM}
 
 # Update and install needed software
+RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+RUN apk update && apk add --no-cache \
+        php8 \
+        php8-fpm \
+        php8-pdo_mysql \
+        nginx
+
 RUN apk update && apk add --no-cache \
         php8 \
         php8-fpm \
