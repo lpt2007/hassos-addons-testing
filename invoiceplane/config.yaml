@@ -2,6 +2,11 @@ name: nginx
 version: "1.0.0"
 slug: nginx
 description: Nginx Addon
+arch:
+  - amd64
+  - armv7
+  - armhf
+  - aarch64
 startup: auto
 boot: true
 options:
