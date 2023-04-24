@@ -1,0 +1,13 @@
+{
+  "name": "nginx",
+  "version": "1.0.0",
+  "slug": "nginx",
+  "description": "Nginx Addon",
+  "startup": "before",
+  "boot": true,
+  "options": {
+    "ssl": false,
+    "certfile": "",
+    "keyfile": ""
+  }
+}
