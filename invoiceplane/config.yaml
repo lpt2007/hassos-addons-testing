@@ -26,5 +26,5 @@ options:
     type: int
     description: Port to serve HTTP traffic on
     default: 80
-ports:
-  - 80:80/tcp
+#ports:
+#  - 80:80/tcp
