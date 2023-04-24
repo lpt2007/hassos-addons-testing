@@ -1,5 +1,5 @@
 name: nginx
-version: "1.0.1a"
+version: "1.0.2a"
 slug: nginx
 description: Nginx Addon
 arch:
@@ -13,4 +13,5 @@ options:
   ssl: false
   certfile: ""
   keyfile: ""
-  port: 80
+ports:
+  - 80:80/tcp
