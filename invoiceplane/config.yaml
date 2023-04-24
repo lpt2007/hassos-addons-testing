@@ -1,64 +1,10 @@
-name: nginx-server
-version: 1.0.0
-slug: nginx-server
-description: Nginx web server for Home Assistant
-startup: services
-arch: 
-  - armhf
-  - armv7
-  - aarch64
-  - amd64
-  - i386
-
-#map:
-#  - name: config
-#    type: config
-#    source: config
-#  - name: ssl
-#    type: config
-#    source: ssl
-#  - name: webroot
-#    type: config
-#    source: webroot
-
+name: nginx
+version: "1.0.0"
+slug: nginx
+description: Nginx Addon
+startup: before
+boot: true
 options:
-  log_level: info
-
-services:
-  - name: Nginx web server
-    description: Starts the Nginx web server
-    startup: true
-    schema: {}
-
-homeassistant:
-  name: Nginx Server
-  options:
-    - name: log_level
-      description: Log level for Nginx
-      required: false
-      default: info
-      selector:
-        select:
-          options:
-            - debug
-            - info
-            - notice
-            - warn
-            - error
-            - crit
-            - alert
-            - emerg
-    - name: http_port
-      description: HTTP port for Nginx
-      required: false
-      default: 80
-    - name: https_port
-      description: HTTPS port for Nginx
-      required: false
-      default: 443
-    - name: enable_ssl
-      description: Enable SSL for Nginx
-      required: false
-      default: false
-      selector:
-        boolean: {}
+  ssl: false
+  certfile: ""
+  keyfile: ""
