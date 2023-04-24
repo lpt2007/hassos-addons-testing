@@ -1,5 +1,5 @@
 name: nginx
-version: "1.0.5a"
+version: "1.0.6a"
 slug: nginx
 description: Nginx Addon
 arch:
@@ -17,28 +17,28 @@ map:
 ingress: true
 init: false
 options:
-  document_root: /share/htdocs
-  php_ini: default
-  default_conf: default
+#  document_root: /share/htdocs
+#  php_ini: default
+#  default_conf: default
   default_ssl_conf: default
-  website_name: null
-  ssl: true
+#  website_name: null
+  ssl: false
   certfile: fullchain.pem
   keyfile: privkey.pem
-  init_commands: []
+#  init_commands: []
 schema:
-  document_root: str
-  php_ini: str
-  default_conf: str
+#  document_root: str
+#  php_ini: str
+#  default_conf: str
   default_ssl_conf: str
-  website_name: str
-  username: str?
-  password: password?
+#  website_name: str
+#  username: str?
+#  password: password?
   ssl: bool
   certfile: str
   keyfile: str
-  init_commands:
-    - str?
+#  init_commands:
+#    - str?
 ports:
   80/tcp: 80
   443/tcp: 8324
