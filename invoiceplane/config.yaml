@@ -1,0 +1,37 @@
+# Example Home Assistant add-on configuration file for a simple web server
+
+# Add-on slug (lowercase, no spaces)
+slug: simple-web-server
+
+# Add-on name (human-friendly)
+name: Simple Web Server
+
+# Add-on version number
+version: "1.0.0"
+
+# Add-on description
+description: A simple web server add-on for Home Assistant.
+
+# Specify the architecture(s) that the add-on supports
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+
+# Define the needed Home Assistant Docker image
+homeassistant:
+  # Specify the version of Home Assistant that the add-on requires
+  version: "2022.2.3"
+
+# Define the Docker image that will be used to run the add-on
+image: nginx
+
+# Define the ports that the add-on will use
+ports:
+  # The port that the web server will listen on
+  - 80:80
+
+# Define the command that will be used to start the web server
+command: ["/usr/sbin/nginx", "-g", "daemon off;"]
