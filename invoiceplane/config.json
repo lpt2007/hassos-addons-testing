@@ -1,13 +1,27 @@
 {
-  "name": "nginx",
+  "name": "nginx-addon",
   "version": "1.0.0",
-  "slug": "nginx",
-  "description": "Nginx Addon",
-  "startup": "before",
+  "slug": "nginx_addon",
+  "description": "Addon to run a nginx web server",
+  "startup": "services",
   "boot": true,
-  "options": {
-    "ssl": false,
-    "certfile": "",
-    "keyfile": ""
-  }
+  "arch": "amd64",
+  "options": {},
+  "map": [
+    {
+      "name": "config",
+      "type": "config",
+      "source": "config"
+    },
+    {
+      "name": "ssl",
+      "type": "config",
+      "source": "ssl"
+    },
+    {
+      "name": "webroot",
+      "type": "config",
+      "source": "webroot"
+    }
+  ]
 }
