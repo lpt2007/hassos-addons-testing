@@ -2,8 +2,8 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.2.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-# Install needed software
-RUN apk add --no-cache \
+# Update and install needed software
+RUN apk update && apk add --no-cache \
         php8 \
         php8-fpm \
         php8-pdo_mysql \
@@ -22,4 +22,3 @@ COPY run.sh /run.sh
 RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
-
