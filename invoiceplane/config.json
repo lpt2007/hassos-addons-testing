@@ -1,12 +1,11 @@
 {
-  "name": "nginx-addon",
+  "name": "Nginx web server",
   "version": "1.0.0",
-  "slug": "nginx_addon",
-  "description": "Addon to run a nginx web server",
+  "slug": "nginx",
+  "description": "Web server powered by Nginx",
   "startup": "services",
-  "boot": true,
-  "arch": "amd64",
-  "options": {},
+  "boot": "auto",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "map": [
     {
       "name": "config",
@@ -22,6 +21,15 @@
       "name": "webroot",
       "type": "config",
       "source": "webroot"
+    }
+  ],
+  "homeassistant": {},
+  "services": [
+    {
+      "name": "Nginx web server",
+      "description": "Starts the Nginx web server",
+      "startup": true,
+      "schema": {}
     }
   ]
 }
