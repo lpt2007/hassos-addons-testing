@@ -1,48 +1,29 @@
-name: nginx
-version: "1.0.10a"
-slug: nginx
-description: Nginx Addon
-url: https://github.com/FaserF/hassio-addons/tree/master/apache2
-arch:
-  - amd64
-  - armv7
-  - armhf
-  - aarch64
-startup: application
-boot: auto
-webui: http://[HOST]:[PORT:80]
-map:
-  - ssl:rw
-  - media:rw
-  - share:rw
-ingress: true
-init: false
-options:
-  document_root: /share/htdocs
-  php_ini: default
-  default_conf: default
-  default_ssl_conf: default
-  website_name: null
-  ssl: false
-  certfile: fullchain.pem
-  keyfile: privkey.pem
-  init_commands: []
-schema:
-  document_root: str
-  php_ini: str
-  default_conf: str
-  default_ssl_conf: str
-  website_name: str
-  username: str?
-  password: password?
-  ssl: bool
-  certfile: str
-  keyfile: str
-  init_commands:
-    - str?
+# Home Assistant Add-on for InvoicePlane
+
+# Add-on slug (lowercase)
+slug: invoiceplane
+
+# Add-on name and description
+name: InvoicePlane
+description: Run InvoicePlane web app in a Docker container
+
+# Docker image
+image: mhzawadi/invoiceplane:latest
+
+# Customize ports
 ports:
-  80/tcp: 80
-  443/tcp: 8324
-ports_description:
-  80/tcp: Web interface http
-  443/tcp: SSL Web interface
+  - 8080:80
+
+# Home Assistant API token (optional)
+# Uncomment the following line to enable
+# ha_access_token: YOUR_HOME_ASSISTANT_API_TOKEN
+
+# Map data directory
+data:
+  - name: invoiceplane-data
+    path: /data
+
+# Map log directory
+log:
+  - name: invoiceplane-log
+    path: /logs
