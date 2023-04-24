@@ -10,8 +10,21 @@ arch:
 startup: application
 boot: manual
 options:
-  ssl: false
-  certfile: ""
-  keyfile: ""
+  ssl:
+    type: boolean
+    description: Enable SSL support
+    default: false
+  certfile:
+    type: string
+    description: Path to SSL certificate file
+    default: ""
+  keyfile:
+    type: string
+    description: Path to SSL key file
+    default: ""
+  port:
+    type: int
+    description: Port to serve HTTP traffic on
+    default: 80
 ports:
   - 80:80/tcp
