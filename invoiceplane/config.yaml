@@ -13,3 +13,4 @@ options:
   ssl: false
   certfile: ""
   keyfile: ""
+  port: 80
