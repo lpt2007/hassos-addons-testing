@@ -9,7 +9,7 @@ username=$(bashio::config 'username')
 password=$(bashio::config 'password')
 default_conf=$(bashio::config 'default_conf')
 default_ssl_conf=$(bashio::config 'default_ssl_conf')
-webrootdocker=/usr/share/nginx/html
+webrootdocker=/var/www/localhost/htdocs/
 phppath=/etc/php81/php.ini
 
 if [ $phpini = "get_file" ]; then
@@ -33,10 +33,10 @@ if [ ! -d $DocumentRoot ]; then
 	echo "You haven't put your website to $DocumentRoot"
 	echo "A default website will now be used"
 	mkdir $webrootdocker
-	cp /usr/share/nginx/html/index.html $webrootdocker
+	cp /index.html $webrootdocker
 else
 	#Create Shortcut to shared html folder
-	ln -s $DocumentRoot /usr/share/nginx/html
+	ln -s $DocumentRoot /var/www/localhost/htdocs/
 fi
 
 #Set rights to web folders and create user
