@@ -7,8 +7,8 @@ arch:
   - armv7
   - armhf
   - aarch64
-startup: auto
-boot: true
+startup: application
+boot: manual
 options:
   ssl: false
   certfile: ""
