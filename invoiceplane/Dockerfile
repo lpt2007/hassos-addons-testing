@@ -16,7 +16,7 @@ RUN wget https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-b
     rm v1.6.1-beta-2.zip
 
 # Copy the default configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+#COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy the start script
 COPY run.sh /run.sh
