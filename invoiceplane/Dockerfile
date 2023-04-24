@@ -4,15 +4,15 @@ FROM ${BUILD_FROM}
 
 # Install needed software
 RUN apk add --no-cache \
-        php7 \
-        php7-fpm \
-        php7-pdo_mysql \
+        php8 \
+        php8-fpm \
+        php8-pdo_mysql \
         nginx
 
 # Install InvoicePlane
-RUN wget https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.5.11/InvoicePlane-1.5.11.zip && \
-    unzip InvoicePlane-1.5.11.zip -d /usr/share/nginx/html && \
-    rm InvoicePlane-1.5.11.zip
+RUN wget https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip && \
+    unzip v1.6.1-beta-2.zip -d /usr/share/nginx/html && \
+    rm v1.6.1-beta-2.zip
 
 # Copy the default configuration
 COPY nginx.conf /etc/nginx/nginx.conf
