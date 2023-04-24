@@ -10,16 +10,16 @@ arch:
   - amd64
   - i386
 
-map:
-  - name: config
-    type: config
-    source: config
-  - name: ssl
-    type: config
-    source: ssl
-  - name: webroot
-    type: config
-    source: webroot
+#map:
+#  - name: config
+#    type: config
+#    source: config
+#  - name: ssl
+#    type: config
+#    source: ssl
+#  - name: webroot
+#    type: config
+#    source: webroot
 
 options:
   log_level: info
