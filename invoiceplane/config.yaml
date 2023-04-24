@@ -8,11 +8,11 @@ name: InvoicePlane
 description: Run InvoicePlane web app in a Docker container
 
 # Docker image
-image: mhzawadi/invoiceplane:latest
+#image: mhzawadi/invoiceplane:latest
 
 # Customize ports
 ports:
-  - 8080:80
+  80/tcp: 80
 
 # Home Assistant API token (optional)
 # Uncomment the following line to enable
