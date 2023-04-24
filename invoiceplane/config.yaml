@@ -2,7 +2,7 @@ name: nginx-server
 version: 1.0.0
 slug: nginx-server
 description: Nginx web server for Home Assistant
-startup: addon-start.sh
+startup: services
 arch: armhf,armv7,aarch64,amd64,i386
 
 map:
