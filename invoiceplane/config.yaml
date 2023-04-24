@@ -1,5 +1,5 @@
 name: nginx
-version: "1.0.3a"
+version: "1.0.4a"
 slug: nginx
 description: Nginx Addon
 arch:
@@ -8,25 +8,40 @@ arch:
   - armhf
   - aarch64
 startup: application
-boot: manual
+boot: auto
+webui: http://[HOST]:[PORT:80]
+map:
+  - ssl:rw
+  - media:rw
+  - share:rw
+ingress: true
+init: false
 options:
-  ssl:
-    required: false
-    default: false
-    description: Use SSL
-    example: true
-  certfile:
-    required: false
-    default: ""
-    description: SSL certificate file path
-    example: /ssl/cert.pem
-  keyfile:
-    required: false
-    default: ""
-    description: SSL key file path
-    example: /ssl/key.pem
-  port:
-    required: false
-    default: 80
-    description: Port to use for HTTP requests
-    example: 8080
+  document_root: /share/htdocs
+  php_ini: default
+  default_conf: default
+  default_ssl_conf: default
+  website_name: null
+  ssl: true
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  init_commands: []
+schema:
+  document_root: str
+  php_ini: str
+  default_conf: str
+  default_ssl_conf: str
+  website_name: str
+  username: str?
+  password: password?
+  ssl: bool
+  certfile: str
+  keyfile: str
+  init_commands:
+    - str?
+ports:
+  80/tcp: 80
+  443/tcp: 8324
+ports_description:
+  80/tcp: Web interface http
+  443/tcp: SSL Web interface
