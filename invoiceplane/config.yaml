@@ -1,5 +1,5 @@
 name: nginx
-version: "1.0.2a"
+version: "1.0.3a"
 slug: nginx
 description: Nginx Addon
 arch:
@@ -11,20 +11,22 @@ startup: application
 boot: manual
 options:
   ssl:
-    type: boolean
-    description: Enable SSL support
+    required: false
     default: false
+    description: Use SSL
+    example: true
   certfile:
-    type: string
-    description: Path to SSL certificate file
+    required: false
     default: ""
+    description: SSL certificate file path
+    example: /ssl/cert.pem
   keyfile:
-    type: string
-    description: Path to SSL key file
+    required: false
     default: ""
+    description: SSL key file path
+    example: /ssl/key.pem
   port:
-    type: int
-    description: Port to serve HTTP traffic on
+    required: false
     default: 80
-#ports:
-#  - 80:80/tcp
+    description: Port to use for HTTP requests
+    example: 8080
