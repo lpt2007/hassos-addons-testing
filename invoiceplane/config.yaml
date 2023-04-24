@@ -1,11 +1,19 @@
 # Home Assistant Add-on for InvoicePlane
-
+name: InvoicePlane
+version: 0.0.1a
 # Add-on slug (lowercase)
 slug: invoiceplane
 
 # Add-on name and description
 name: InvoicePlane
 description: Run InvoicePlane web app in a Docker container
+url: https://github.com/FaserF/hassio-addons/tree/master/apache2-minimal
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
 
 # Docker image
 #image: mhzawadi/invoiceplane:latest
