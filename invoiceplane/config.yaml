@@ -26,7 +26,7 @@ homeassistant:
   version: "2022.2.3"
 
 # Define the Docker image that will be used to run the add-on
-image: homeassistant/nginx:latest
+image: nginx
 
 # Define the ports that the add-on will use
 ports:
