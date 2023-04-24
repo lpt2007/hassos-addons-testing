@@ -1,6 +1,6 @@
 # Home Assistant Add-on for InvoicePlane
 name: InvoicePlane
-version: 0.0.5a
+version: 0.0.6a
 # Add-on slug (lowercase)
 slug: invoiceplane
 
@@ -14,7 +14,9 @@ arch:
   - aarch64
   - amd64
   - i386
-
+startup: application
+boot: auto
+webui: http://[HOST]:[PORT:80]
 # Docker image
 #image: mhzawadi/invoiceplane:latest
 
