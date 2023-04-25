@@ -1,9 +1,9 @@
-arch:
-  - amd64
-
 description: "Home Assistant addon with web server and PHP 8 for InvoicePlane"
 slug: "invoiceplane-addon"
-version: "0.0.008a"
+version: "0.0.009a"
+arch:
+  - amd64
+init: false
 
 log_level: info
 docker_image: https://github.com/lpt2007/hassos-addons-testing/tree/main/invoiceplane
