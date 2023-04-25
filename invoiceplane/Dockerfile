@@ -10,7 +10,7 @@ RUN wget -O /tmp/invoiceplane.zip https://github.com/InvoicePlane/InvoicePlane/r
     unzip /tmp/invoiceplane.zip -d /var/www && \
     chown -R nobody:nobody /var/www/ip && \
     chmod -R 775 /var/www/ip/uploads && \
-    chmod -R 775 /var/www/ip/application\cache && \
+    chmod -R 775 /var/www/ip/application/cache && \
     rm /tmp/invoiceplane.zip
 
 COPY nginx.conf /etc/nginx/nginx.conf
