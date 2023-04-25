@@ -18,4 +18,9 @@ COPY php.ini /etc/php8/conf.d/custom.ini
 COPY run.sh /run.sh
 RUN chmod a+x /run.sh
 
-CMD [ "/run.sh" ]
+# Install tini
+ENV TINI_VERSION v0.19.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-static /bin/tini
+RUN chmod +x /bin/tini
+
+CMD ["/bin/tini", "--", "/run.sh"]
