@@ -2,8 +2,7 @@ ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
 FROM ${BUILD_FROM}
 
 RUN apk update && \
-    apk add --no-cache nginx php php-fpm php-pdo php-pdo_mysql php-json php-openssl php-zip php-curl php-phar php-dom php-xml && \
-#    apk add --no-cache nginx && \
+    apk add --no-cache nginx php php-zlib php-gd php-mysqli php-mbstring php-fpm php-pdo php-pdo_mysql php-json php-openssl php-zip php-curl php-phar php-dom php-xml && \
     rm -rf /var/cache/apk/*
 
 RUN wget -O /tmp/invoiceplane.zip https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip && \
@@ -18,10 +17,4 @@ COPY php.ini /etc/php8/conf.d/custom.ini
 COPY run.sh /run.sh
 RUN chmod a+x /run.sh
 
-# Install tini
-#ENV TINI_VERSION v0.19.0
-#ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-static /bin/tini
-#RUN chmod +x /bin/tini
-
-#CMD ["/bin/tini", "--", "/run.sh"]
 CMD [ "/run.sh" ]
