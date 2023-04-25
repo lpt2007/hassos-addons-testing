@@ -6,8 +6,8 @@ arch:
 init: false
 
 ports:
-  80/tcp: 80
-  443/tcp: 443
+  80/tcp: 81
+  443/tcp: 444
 ports_description:
   80/tcp: Web interface http
   443/tcp: SSL Web interface
