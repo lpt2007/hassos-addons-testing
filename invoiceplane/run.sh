@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+echo "zagnan ukaz set -e"
 set -e
 
-# Start php-fpm
+echo "Start php-fpm"
 php-fpm8 -D
 
-# Start nginx
+echo "Start nginx"
 nginx -g 'daemon off;'
