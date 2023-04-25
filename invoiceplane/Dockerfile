@@ -1,24 +1,13 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.2.2
-# hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+FROM homeassistant/amd64-base:latest
 
-# Update and install needed software
-RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
-RUN apk update && apk add --no-cache \
-#        php8 \
-#        php8-fpm \
-#        php8-pdo_mysql \
-        nginx
+RUN apk update && \
+    apk add --no-cache docker && \
+    apk add --no-cache git && \
+    git clone https://github.com/InvoicePlane/InvoicePlane.git /var/www/html/invoiceplane && \
+    cd /var/www/html/invoiceplane && \
+    git checkout tags/v1.5.11 && \
+    docker run --rm -it -v $(pwd):/app composer install
 
-# Install InvoicePlane
-RUN wget https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip && \
-    unzip v1.6.1-beta-2.zip -d /usr/share/nginx/html && \
-    rm v1.6.1-beta-2.zip
-
-# Copy the default configuration
-#COPY nginx.conf /etc/nginx/nginx.conf
-
-# Copy the start script
 COPY run.sh /run.sh
 RUN chmod a+x /run.sh
 
