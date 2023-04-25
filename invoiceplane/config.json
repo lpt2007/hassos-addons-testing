@@ -1,0 +1,12 @@
+{
+  "name": "InvoicePlane",
+  "version": "1.0.0",
+  "slug": "invoiceplane",
+  "description": "Run InvoicePlane in Docker",
+  "startup": "services",
+  "boot": "auto",
+  "options": {},
+  "ports": {
+    "80/tcp": 8080
+  }
+}
