@@ -8,9 +8,9 @@ RUN apk update && \
 
 RUN wget -O /tmp/invoiceplane.zip https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip && \
     unzip /tmp/invoiceplane.zip -d /var/www && \
-    chown -R nobody:nobody /var/www/InvoicePlane && \
-    chmod -R 775 /var/www/InvoicePlane/storage && \
-    chmod -R 775 /var/www/InvoicePlane/bootstrap/cache && \
+    chown -R nobody:nobody /var/www/ip && \
+    chmod -R 775 /var/www/ip/storage && \
+    chmod -R 775 /var/www/ip/bootstrap/cache && \
     rm /tmp/invoiceplane.zip
 
 COPY nginx.conf /etc/nginx/nginx.conf
