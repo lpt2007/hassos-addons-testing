@@ -3,7 +3,7 @@ echo "zagnan ukaz set -e"
 set -e
 
 echo "Start php-fpm"
-php-fpm8 -D
+exec php-fpm8 -D
 
 echo "Start nginx"
-nginx -g 'daemon off;'
+exec nginx -g 'daemon off;'
