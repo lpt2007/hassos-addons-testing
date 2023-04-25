@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-echo "zagnan ukaz set -e"
 set -e
 
 echo "Start php-fpm"
