@@ -1,9 +1,16 @@
 description: "Home Assistant addon with web server and PHP 8 for InvoicePlane"
 slug: "invoiceplane-addon"
-version: "0.0.012a"
+version: "0.0.013a"
 arch:
   - amd64
 init: false
+
+ports:
+  80/tcp: 80
+  443/tcp: 8324
+ports_description:
+  80/tcp: Web interface http
+  443/tcp: SSL Web interface
 
 log_level: info
 docker_image: https://github.com/lpt2007/hassos-addons-testing/tree/main/invoiceplane
