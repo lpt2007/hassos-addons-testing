@@ -19,8 +19,9 @@ COPY run.sh /run.sh
 RUN chmod a+x /run.sh
 
 # Install tini
-ENV TINI_VERSION v0.19.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-static /bin/tini
-RUN chmod +x /bin/tini
+#ENV TINI_VERSION v0.19.0
+#ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-static /bin/tini
+#RUN chmod +x /bin/tini
 
-CMD ["/bin/tini", "--", "/run.sh"]
+#CMD ["/bin/tini", "--", "/run.sh"]
+CMD php-fpm8 && nginx -g 'daemon off;'
