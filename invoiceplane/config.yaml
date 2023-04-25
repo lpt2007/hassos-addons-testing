@@ -1,0 +1,3 @@
+log_level: info
+docker_image: your-docker-username/invoiceplane-addon
+name: InvoicePlane
