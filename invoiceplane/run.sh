@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
+set -e
 
-docker run --rm -it \
-    -v /var/www/html/invoiceplane:/var/www/html/invoiceplane \
-    -p 8080:80 \
-    mhzawadi/invoiceplane
+# Start php-fpm
+php-fpm8 -D
+
+# Start nginx
+nginx -g 'daemon off;'
