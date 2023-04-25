@@ -2,6 +2,7 @@
   "name": "InvoicePlane",
   "version": "1.0.0",
   "slug": "invoiceplane",
+  "arch": ["amd64"],
   "description": "Run InvoicePlane in Docker",
   "startup": "services",
   "boot": "auto",
