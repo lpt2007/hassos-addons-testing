@@ -64,6 +64,7 @@ COPY --chown=nobody rootfs/ /
 
 RUN chmod +x /etc/service/php/run
 RUN chmod +x /etc/service/nginx/run
+RUN chmod +x /etc/service/ip/run
 
 # Switch to use a non-root user from here on
 USER nobody
