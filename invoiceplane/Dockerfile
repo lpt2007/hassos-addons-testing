@@ -13,6 +13,9 @@ RUN wget -O /tmp/invoiceplane.zip https://github.com/InvoicePlane/InvoicePlane/r
     chmod -R 775 /var/www/ip/application/cache && \
     rm /tmp/invoiceplane.zip
 
+COPY test.php /var/www/ip/test.php
+COPY test.html /var/www/ip/test.html
+
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY php.ini /etc/php8/conf.d/custom.ini
 COPY run.sh /run.sh
