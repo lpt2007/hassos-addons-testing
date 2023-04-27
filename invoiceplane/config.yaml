@@ -16,6 +16,6 @@ log_level: info
 docker_image: https://github.com/lpt2007/hassos-addons-testing/tree/main/invoiceplane
 name: InvoicePlane
 share:
-  - name: "www"
-    path: "/share/www"
+  - name: "www-test"
+    path: "/share/www-test"
 
