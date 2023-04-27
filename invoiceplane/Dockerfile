@@ -62,6 +62,9 @@ RUN apk --no-cache add \
 # Add configuration files
 COPY --chown=nobody rootfs/ /
 
+RUN chmod +x /etc/service/php/run
+RUN chmod +x /etc/service/nginx/run
+
 # Switch to use a non-root user from here on
 USER nobody
 
