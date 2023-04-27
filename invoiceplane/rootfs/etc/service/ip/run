@@ -1,0 +1,11 @@
+#!/bin/sh
+### In memcached.sh (make sure this file is chmod +x):
+# `chpst -u memcache` runs the given command as the user `memcache`.
+# If you omit that part, the command will be run as root.
+#exec 2>&1 chpst -u memcache /usr/bin/memcached
+
+ln -s /share/www/invoiceplane/ip/* /var/www/html/
+
+### In Dockerfile:
+#RUN mkdir /etc/service/memcached
+#ADD memcached.sh /etc/service/memcached/run
