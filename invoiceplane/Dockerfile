@@ -18,7 +18,7 @@ COPY test.html /var/www/ip/test.html
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY php.ini /etc/php81/conf.d/custom.ini
-COPY php.conf /etc/php81/php-fpm.d/custom.conf
+#COPY php.conf /etc/php81/php-fpm.d/custom.conf
 COPY run.sh /run.sh
 RUN chmod a+x /run.sh
 
