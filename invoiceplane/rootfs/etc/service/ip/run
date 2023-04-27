@@ -4,7 +4,7 @@
 # If you omit that part, the command will be run as root.
 #exec 2>&1 chpst -u memcache /usr/bin/memcached
 
-ln -s /share/www/invoiceplane/ip/* /var/www/html/
+exec ln -s /share/www/invoiceplane/ip/* /var/www/html/
 
 ### In Dockerfile:
 #RUN mkdir /etc/service/memcached
