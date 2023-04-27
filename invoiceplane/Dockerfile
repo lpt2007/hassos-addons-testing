@@ -72,6 +72,7 @@ WORKDIR /var/www/html
 EXPOSE 8080
 
 # Let runit start nginx & php-fpm
+RUN chmod +x /bin/docker-entrypoint.sh
 CMD [ "/bin/docker-entrypoint.sh" ]
 
 # Configure a healthcheck to validate that everything is up&running
