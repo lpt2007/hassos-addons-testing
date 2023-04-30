@@ -10,6 +10,7 @@ if [ -L /var/www/html ]; then
 else
   echo "Simbolična povezava /var/www/html ne obstaja."
   echo "InvoicePlane ni nameščen."
+  echo "Trenutni uporabnik in skupina: $(id -un) $(id -gn)"
   
   if [ -d /share/invoiceplane ]; then
     echo "Mapa /share/invoiceplane obstaja."
