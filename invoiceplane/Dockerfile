@@ -66,6 +66,9 @@ RUN chmod +x /etc/service/php/run
 RUN chmod +x /etc/service/nginx/run
 RUN chmod +x /etc/service/ip/run
 
+RUN mkdir -p /share/invoiceplane
+RUN chown -R nobody:nobody /share/invoiceplane
+
 # Switch to use a non-root user from here on
 USER nobody
 
