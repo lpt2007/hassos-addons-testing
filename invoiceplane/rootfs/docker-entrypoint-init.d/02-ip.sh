@@ -38,14 +38,14 @@ else
 
   # Prenesi InvoicePlane
   echo "InvoicePlane se prenaša iz GITHUB-a...ok"
-  curl -LJO https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip
+  curl -LJO https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip -o /share/invoiceplane/v1.6.1-beta-2.zip
 
   # Razpakiraj arhiv v mapo /share/invoiceplane
   echo "Dearhiviranje datoteke se je pričel...ok"
-  unzip v1.6.1-beta-2.zip -d /share/invoiceplane
+  unzip /share/invoiceplane/v1.6.1-beta-2.zip -d /share/invoiceplane
   # Odstrani preneseni arhiv
   echo "Arhivska datoteka bo odstranjena...ok"
-  rm -f v1.6.1-beta-2.zip
+  rm -f /share/invoiceplane/v1.6.1-beta-2.zip
   # prestavim vsebino iz ip mape v /var/www/html
   mv /share/invoiceplane/ip/* /share/invoiceplane
   # zbrišem prazno mapo ip
