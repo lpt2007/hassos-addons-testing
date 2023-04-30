@@ -4,7 +4,7 @@
 # Preveri, ali je mapa /share/invoiceplane že nameščena
 if [ -d "-f /var/www/html/ipconfig.php" ]; then
   echo "InvoicePlane je že nameščen."
-  exit 0
+#  exit 0
 else
   echo "InvoicePlane ni nameščen."
   echo "Nameščam..."
@@ -42,4 +42,4 @@ else
   #fi
 
 fi
-exit 1
+#exit 1
