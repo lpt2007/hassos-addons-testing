@@ -10,6 +10,22 @@ if [ -L /var/www/html ]; then
 else
   echo "Simbolična povezava /var/www/html ne obstaja."
   echo "InvoicePlane ni nameščen."
+  
+  if [ -d /share/invoiceplane ]; then
+    echo "Mapa /share/invoiceplane obstaja."
+  else
+    echo "Mapa /share/invoiceplane ne obstaja."
+    echo "NAPAKA"
+    exit 1
+  fi
+  
+  if [ "$(stat -c '%U:%G:%a' /share/invoiceplane)" = "nobody:nobody:755" ]; then
+    echo "Mapa /share/invoiceplane ima prava dovoljenja."
+  else
+    echo "Mapa /share/invoiceplane nima pravih dovoljenj."
+    echo "NAPAKA"
+  fi
+
   echo "Nameščam..."
   
   # Preveri, ali je dosegljiva povezava do GitHuba
