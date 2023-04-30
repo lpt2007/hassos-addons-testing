@@ -78,7 +78,7 @@ RUN chmod +x /docker-entrypoint-init.d/02-ip.sh
 USER nobody
 
 # Add application
-WORKDIR /var/www/invoiceplane
+#WORKDIR /var/www/invoiceplane
 
 # Expose the port nginx is reachable on
 EXPOSE 8080
