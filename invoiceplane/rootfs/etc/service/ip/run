@@ -18,9 +18,14 @@ else
 
   # Razpakiraj arhiv v mapo /var/www/html/
   unzip v1.6.1-beta-2.zip -d /var/www/html
-
   # Odstrani preneseni arhiv
   rm -f v1.6.1-beta-2.zip
+  # prestavim vsebino iz ip mape v /var/www/html
+  mv /var/www/html/ip/* /var/www/html/
+  # zbrišem prazno mapo ip
+  rm -r /var/www/html/ip
+  # kopira datoteko ipconfig.php.example v ipconfig.php
+  cp /var/www/html/ipconfig.php.example /var/www/html/ipconfig.php
 
   # Sporoči, da je bila namestitev InvoicePlane uspešna
   echo "InvoicePlane je bil uspešno nameščen v /var/www/html/."
