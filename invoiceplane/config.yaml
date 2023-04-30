@@ -1,9 +1,33 @@
 description: "Home Assistant addon with web server and PHP 8 for InvoicePlane"
 slug: "invoiceplane-addon"
-version: "0.0.060a"
+version: "0.0.061a"
 arch:
   - amd64
 init: false
+
+options:
+  document_root: /share/invoiceplane
+#  php_ini: default
+#  default_conf: default
+#  default_ssl_conf: default
+#  website_name: null
+#  ssl: true
+#  certfile: fullchain.pem
+#  keyfile: privkey.pem
+#  init_commands: []
+schema:
+  document_root: str
+#  php_ini: str
+#  default_conf: str
+#  default_ssl_conf: str
+#  website_name: str
+#  username: str?
+#  password: password?
+#  ssl: bool
+#  certfile: str
+#  keyfile: str
+#  init_commands:
+#    - str?
 
 ports:
   8080/tcp: 81
@@ -13,18 +37,6 @@ ports_description:
   443/tcp: SSL Web interface
 
 log_level: info
-
-options:
-  data_path:
-    name: "data_path"
-    description: "Path to InvoicePlane installation directory"
-    default: "/share/www/invoiceplane"
-    type: "str"
-schema:
-  data_path:
-    type: "string"
-    minLength: 1
-    format: "directory"
   
 docker_image: https://github.com/lpt2007/hassos-addons-testing/tree/main/invoiceplane
 name: InvoicePlane
