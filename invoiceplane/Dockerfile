@@ -68,8 +68,8 @@ RUN chmod +x /etc/service/nginx/run
 RUN chmod +x /docker-entrypoint-init.d/02-ip.sh
 
 # Add shered folder between haos and addon
-RUN mkdir -p /share/invoiceplane
-RUN chown -R nobody:nobody /share/invoiceplane
+#RUN mkdir -p /share/invoiceplane
+#RUN chown -R nobody:nobody /share/invoiceplane
 
 # Switch to use a non-root user from here on
 USER nobody
