@@ -63,7 +63,7 @@ else
     echo "InvoicePlane je bil uspešno nameščen v /var/www/invoiceplane/."
     else
     echo "NAPAKA"
-    exit 1
+    #exit 1
   
 
 
