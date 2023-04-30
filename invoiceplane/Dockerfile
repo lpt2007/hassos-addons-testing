@@ -66,6 +66,7 @@ RUN chmod +x /etc/service/php/run
 RUN chmod +x /etc/service/nginx/run
 RUN chmod +x /etc/service/ip/run
 
+# Add shered folder between haos and addon
 RUN mkdir -p /share/invoiceplane
 RUN chown -R nobody:nobody /share/invoiceplane
 
