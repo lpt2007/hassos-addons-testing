@@ -1,8 +1,5 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.2.2
-# hadolint ignore=DL3006
-FROM ${BUILD_FROM}
-#ARG ARCH=
-#FROM ${ARCH}alpine:3.17
+ARG ARCH=
+FROM ${ARCH}alpine:3.17
 
 LABEL Maintainer="Ernesto Serrano <info@ernesto.es>" \
       Description="Lightweight container with Nginx & PHP-FPM based on Alpine Linux."
