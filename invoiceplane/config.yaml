@@ -15,10 +15,11 @@ ports_description:
 log_level: info
 
 options:
-  - name: data_path
-    description: Path to InvoicePlane installation directory
-    type: str
-    default: /share/www/invoiceplane
+  data_path:
+    name: "data_path"
+    description: "Path to InvoicePlane installation directory"
+    type: "str"
+    default: "/share/www/invoiceplane"
 
 docker_image: https://github.com/lpt2007/hassos-addons-testing/tree/main/invoiceplane
 name: InvoicePlane
