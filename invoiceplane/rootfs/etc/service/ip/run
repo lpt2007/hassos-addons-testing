@@ -1,12 +1,10 @@
 #!/bin/sh
-set -e
+DocumentRoot=$(bashio::config 'document_root')
 
-document_root="{{ document_root }}"
-
-# Preveri, ali je mapa $document_root že nameščena
-if [ -d "$document_root" ]; then
+# Preveri, ali je mapa $DocumentRoot že nameščena
+if [ -d "$DocumentRoot" ]; then
   echo "InvoicePlane je že nameščen."
-  ln -s $document_root/ip/* /var/www/html/
+  ln -s $DocumentRoot/ip/* /var/www/html/
   echo "Mapa uspešno povezana na strežnik"
   exit 1
 fi
@@ -18,13 +16,13 @@ if ! curl --output /dev/null --silent --head --fail "https://github.com/InvoiceP
 fi
 
 # Ustvari mapo, če ta ne obstaja
-mkdir -p $document_root
+mkdir -p $DocumentRoot
 
 # Prenesi InvoicePlane
 curl -LJO https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip
 
-# Razpakiraj arhiv v mapo /share/www/invoiceplane
-unzip v1.6.1-beta-2.zip -d $document_root
+# Razpakiraj arhiv v mapo $DocumentRoot
+unzip v1.6.1-beta-2.zip -d $DocumentRoot
 
 # Odstrani preneseni arhiv
 rm -f v1.6.1-beta-2.zip
