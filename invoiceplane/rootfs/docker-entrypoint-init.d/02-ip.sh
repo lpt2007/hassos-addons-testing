@@ -39,7 +39,7 @@ else
 
   # Prenesi InvoicePlane
   echo "InvoicePlane se prenaša iz GITHUB-a...ok"
-  curl -LJO https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip -o /share/invoiceplane/v1.6.1-beta-2.zip
+  wget -O /share/invoiceplane/v1.6.1-beta-2.zip https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip
 
   # Razpakiraj arhiv v mapo /share/invoiceplane
   echo "Dearhiviranje datoteke se je pričel...ok"
