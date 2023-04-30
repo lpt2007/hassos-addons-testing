@@ -2,7 +2,7 @@
 #DocumentRoot=$(bashio::config 'document_root')
 
 # Preveri, ali je mapa /share/invoiceplane že nameščena
-if [ -d "-f /var/www/html/ipconfig.php" ]; then
+if [ "-f /var/www/html/ipconfig.php" ]; then
   echo "InvoicePlane je že nameščen."
 #  exit 0
 else
