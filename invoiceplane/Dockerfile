@@ -5,7 +5,7 @@ LABEL Maintainer="Ernesto Serrano <info@ernesto.es>" \
       Description="Lightweight container with Nginx & PHP-FPM based on Alpine Linux."
       
 # ustvarjanje nove točke za priključitev datotečnega sistema
-VOLUME /var/www/html
+#VOLUME /var/www/html
 
 # Install packages
 RUN apk --no-cache add \
