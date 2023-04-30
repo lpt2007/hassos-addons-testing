@@ -1,6 +1,6 @@
 description: "Home Assistant addon with web server and PHP 8 for InvoicePlane"
 slug: "invoiceplane-addon"
-version: "0.0.058a"
+version: "0.0.059a"
 arch:
   - amd64
 init: false
@@ -19,6 +19,7 @@ options:
     name: "data_path"
     description: "Path to InvoicePlane installation directory"
     default: "/share/www/invoiceplane"
+    type: "str"
 schema:
   data_path: "str"
   
