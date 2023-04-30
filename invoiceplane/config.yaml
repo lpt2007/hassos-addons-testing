@@ -1,6 +1,6 @@
 description: "Home Assistant addon with web server and PHP 8 for InvoicePlane"
 slug: "invoiceplane-addon"
-version: "0.0.054a"
+version: "0.0.055a"
 arch:
   - amd64
 init: false
