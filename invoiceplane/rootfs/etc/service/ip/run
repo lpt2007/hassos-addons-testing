@@ -2,30 +2,37 @@
 #DocumentRoot=$(bashio::config 'document_root')
 
 # Preveri, ali je mapa /share/invoiceplane že nameščena
-if [ -d "/share/invoiceplane" ]; then
+if [ -d "-f /share/invoiceplane/ipconfig.php" ]; then
   echo "InvoicePlane je že nameščen."
-#  ln -s /share/invoiceplane/ip/* /var/www/html/
-#  echo "Mapa uspešno povezana na strežnik"
-  exit 1
+else
+  echo "InvoicePlane ni nameščen."
+  echo "Nameščam."
+  # Preveri, ali je dosegljiva povezava do GitHuba
+  if ! curl --output /dev/null --silent --head --fail "https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip"; then
+    echo "Ni mogoče prenesti InvoicePlane. Povezava do GitHuba ni na voljo."
+    exit 1
+  fi
+
+  # Prenesi InvoicePlane
+  curl -LJO https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip
+
+  # Razpakiraj arhiv v mapo /share/invoiceplane
+  unzip v1.6.1-beta-2.zip -d /share/invoiceplane
+
+  # Odstrani preneseni arhiv
+  rm -f v1.6.1-beta-2.zip
+
+  # Sporoči, da je bila namestitev InvoicePlane uspešna
+  echo "InvoicePlane je bil uspešno nameščen v /share/invoiceplane."
+  
+  if [ -L "/var/www/html" ]; then
+    echo "Povezava med /share/invoiceplane/ip/ in /var/www/html je že vspostavljena"
+    exit 1
+  else
+    echo "Povezava med /share/invoiceplane/ip/ in /var/www/html še ni vspostavljena"
+    echo "Vzpostavljam..."
+    ln -s /share/invoiceplane/ip/* /var/www/html/
+    echo "Mapa uspešno povezana na strežnik"
+  fi
+
 fi
-
-# Preveri, ali je dosegljiva povezava do GitHuba
-if ! curl --output /dev/null --silent --head --fail "https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip"; then
-  echo "Ni mogoče prenesti InvoicePlane. Povezava do GitHuba ni na voljo."
-  exit 1
-fi
-
-# Ustvari mapo, če ta ne obstaja
-mkdir -p /share/invoiceplane
-
-# Prenesi InvoicePlane
-curl -LJO https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip
-
-# Razpakiraj arhiv v mapo /share/invoiceplane
-unzip v1.6.1-beta-2.zip -d /share/invoiceplane
-
-# Odstrani preneseni arhiv
-rm -f v1.6.1-beta-2.zip
-
-# Sporoči, da je bila namestitev InvoicePlane uspešna
-echo "InvoicePlane je bil uspešno nameščen v /share/invoiceplane."
