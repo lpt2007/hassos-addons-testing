@@ -1,12 +1,12 @@
 #!/bin/sh
 set -e
 
-data_path="{{ data_path }}"
+document_root="{{ document_root }}"
 
-# Preveri, ali je mapa /share/www/invoiceplane že nameščena
-if [ -d "/share/www/invoiceplane" ]; then
+# Preveri, ali je mapa $document_root že nameščena
+if [ -d "$document_root" ]; then
   echo "InvoicePlane je že nameščen."
-  ln -s /share/www/invoiceplane/ip/* /var/www/html/
+  ln -s $document_root/ip/* /var/www/html/
   echo "Mapa uspešno povezana na strežnik"
   exit 1
 fi
@@ -18,23 +18,16 @@ if ! curl --output /dev/null --silent --head --fail "https://github.com/InvoiceP
 fi
 
 # Ustvari mapo, če ta ne obstaja
-mkdir -p /share/www/invoiceplane
+mkdir -p $document_root
 
 # Prenesi InvoicePlane
 curl -LJO https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip
 
 # Razpakiraj arhiv v mapo /share/www/invoiceplane
-unzip v1.6.1-beta-2.zip -d /share/www/invoiceplane
+unzip v1.6.1-beta-2.zip -d $document_root
 
 # Odstrani preneseni arhiv
 rm -f v1.6.1-beta-2.zip
 
 # Sporoči, da je bila namestitev InvoicePlane uspešna
-echo "InvoicePlane je bil uspešno nameščen v /share/www/invoiceplane."
-
-
-#exec ln -s /share/www/invoiceplane/ip/* /var/www/html/
-
-### In Dockerfile:
-#RUN mkdir /etc/service/memcached
-#ADD memcached.sh /etc/service/memcached/run
+echo "InvoicePlane je bil uspešno nameščen v $document_root."
