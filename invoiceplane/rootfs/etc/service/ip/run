@@ -28,4 +28,4 @@ unzip v1.6.1-beta-2.zip -d /share/invoiceplane
 rm -f v1.6.1-beta-2.zip
 
 # Sporoči, da je bila namestitev InvoicePlane uspešna
-echo "InvoicePlane je bil uspešno nameščen v $document_root."
+echo "InvoicePlane je bil uspešno nameščen v /share/invoiceplane."
