@@ -21,7 +21,10 @@ options:
     default: "/share/www/invoiceplane"
     type: "str"
 schema:
-  data_path: "str"
+  data_path:
+    type: "string"
+    minLength: 1
+    format: "directory"
   
 docker_image: https://github.com/lpt2007/hassos-addons-testing/tree/main/invoiceplane
 name: InvoicePlane
