@@ -4,7 +4,39 @@
 # If you omit that part, the command will be run as root.
 #exec 2>&1 chpst -u memcache /usr/bin/memcached
 
-exec ln -s /share/www/invoiceplane/ip/* /var/www/html/
+#!/bin/bash
+
+# Preveri, ali je mapa /share/www/invoiceplane že nameščena
+if [ -d "/share/www/invoiceplane" ]; then
+  echo "InvoicePlane je že nameščen."
+  ln -s /share/www/invoiceplane/ip/* /var/www/html/
+  echo "Mapa uspešno povezana na strežnik"
+  exit 1
+fi
+
+# Preveri, ali je dosegljiva povezava do GitHuba
+if ! curl --output /dev/null --silent --head --fail "https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip"; then
+  echo "Ni mogoče prenesti InvoicePlane. Povezava do GitHuba ni na voljo."
+  exit 1
+fi
+
+# Ustvari mapo, če ta ne obstaja
+mkdir -p /share/www/invoiceplane
+
+# Prenesi InvoicePlane
+curl -LJO https://github.com/InvoicePlane/InvoicePlane/releases/download/v1.6.1-beta-2/v1.6.1-beta-2.zip
+
+# Razpakiraj arhiv v mapo /share/www/invoiceplane
+unzip v1.6.1-beta-2.zip -d /share/www/invoiceplane
+
+# Odstrani preneseni arhiv
+rm -f v1.6.1-beta-2.zip
+
+# Sporoči, da je bila namestitev InvoicePlane uspešna
+echo "InvoicePlane je bil uspešno nameščen v /share/www/invoiceplane."
+
+
+#exec ln -s /share/www/invoiceplane/ip/* /var/www/html/
 
 ### In Dockerfile:
 #RUN mkdir /etc/service/memcached
