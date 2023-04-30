@@ -4,8 +4,8 @@
 # Preveri, ali je mapa /share/invoiceplane že nameščena
 if [ -d "/share/invoiceplane" ]; then
   echo "InvoicePlane je že nameščen."
-  ln -s /share/invoiceplane/ip/* /var/www/html/
-  echo "Mapa uspešno povezana na strežnik"
+#  ln -s /share/invoiceplane/ip/* /var/www/html/
+#  echo "Mapa uspešno povezana na strežnik"
   exit 1
 fi
 
