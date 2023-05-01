@@ -21,6 +21,7 @@ options:
   hsts: max-age=31536000; includeSubDomains
   certfile: fullchain.pem
   keyfile: privkey.pem
+  ssl: true
   cloudflare: false
   customize:
     active: false
@@ -34,6 +35,7 @@ schema:
   hsts: str
   certfile: str
   keyfile: str
+  ssl: bool
   cloudflare: bool
   customize:
     active: bool
