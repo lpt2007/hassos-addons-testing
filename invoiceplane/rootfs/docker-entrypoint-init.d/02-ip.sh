@@ -67,7 +67,7 @@ if [ -d /share/invoiceplane ]; then
           ln -s /share/invoiceplane /var/www/
 
         # Preveri, ali je mapa /var/www/invoiceplane pravilno viden
-        if [ -f "/var/www/html/ipconfig.php" ]; then
+        if [ -f "/share/invoiceplane/ipconfig.php" ]; then
         # Sporoči, da je bila namestitev InvoicePlane uspešna
           echo "InvoicePlane je bil uspešno nameščen v /var/www/invoiceplane/."
         else
