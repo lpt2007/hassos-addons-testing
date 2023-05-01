@@ -70,8 +70,9 @@ bashio::log.info "Running nginx..."
 #its
 if bashio::config.false 'ssl'; then
   echo "SSL is disabled, skipping certificate check."
+  exec nginx -c /etc/nginx-no-ssl.conf < /dev/null
 else
   stat "/ssl/${CERTFILE}" -c %y > /tmp/certificate_timestamp
+  exec nginx -c /etc/nginx.conf < /dev/null
 fi
 #its
-exec nginx -c /etc/nginx.conf < /dev/null
