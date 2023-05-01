@@ -1,5 +1,8 @@
-ARG ARCH=
-FROM ${ARCH}alpine:3.17
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.2.2
+# hadolint ignore=DL3006
+FROM ${BUILD_FROM}
+#ARG ARCH=
+#FROM ${ARCH}alpine:3.17
 
 LABEL Maintainer="Ernesto Serrano <info@ernesto.es>" \
       Description="Lightweight container with Nginx & PHP-FPM based on Alpine Linux."
@@ -37,6 +40,7 @@ RUN apk --no-cache add \
         nginx \
         runit \
         curl \
+        bash \
 # Bring in gettext so we can get `envsubst`, then throw
 # the rest away. To do this, we need to install `gettext`
 # then move `envsubst` out of the way so `gettext` can
