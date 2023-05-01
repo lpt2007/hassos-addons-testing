@@ -34,12 +34,6 @@ RUN apk add --no-cache nginx openssl \
 # Copy data
 COPY rootfs /
 
-# pravice za pisanje v mapo /tmp
-RUN chmod 777 /tmp
-
-# dodal sem uporabnika nobody za potrebe nginx
-USER nobody:nobody
-
 WORKDIR /
 
 ENV client_max_body_size=2M \
