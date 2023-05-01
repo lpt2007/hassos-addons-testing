@@ -88,6 +88,13 @@ WORKDIR /var/www
 # Expose the port nginx is reachable on
 EXPOSE 8080
 
+# Let runit start nginx & php-fpm
+RUN chmod +x /bin/docker-entrypoint.sh
+CMD [ "/bin/docker-entrypoint.sh" ]
+
+# Configure a healthcheck to validate that everything is up&running
+HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping
+
 ENV client_max_body_size=2M \
     clear_env=no \
     allow_url_fopen=On \
@@ -101,24 +108,3 @@ ENV client_max_body_size=2M \
     post_max_size=8M \
     upload_max_filesize=2M \
     zlib_output_compression=On
-
-# Let runit start nginx & php-fpm
-RUN chmod +x /bin/docker-entrypoint.sh
-CMD [ "/bin/docker-entrypoint.sh" ]
-
-# Configure a healthcheck to validate that everything is up&running
-HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping
-
-#ENV client_max_body_size=2M \
-#    clear_env=no \
-#    allow_url_fopen=On \
-#    allow_url_include=Off \
-#    display_errors=Off \
-#    file_uploads=On \
-#    max_execution_time=0 \
-#    max_input_time=-1 \
-#    max_input_vars=1000 \
-#    memory_limit=128M \
-#    post_max_size=8M \
-#    upload_max_filesize=2M \
-#    zlib_output_compression=On
