@@ -81,3 +81,16 @@ else
   
 fi
 echo "KONEC"
+echo "VPIS ENV za NGINX"
+tmpfile=$(mktemp)
+cat /etc/nginx/nginx.conf | envsubst "$(env | cut -d= -f1 | sed -e 's/^/$/')" | tee "$tmpfile" > /dev/null
+mv "$tmpfile" /etc/nginx/nginx.conf
+echo "VPIS ENV za PHP"
+tmpfile=$(mktemp)
+cat /etc/php81/conf.d/custom.ini | envsubst "$(env | cut -d= -f1 | sed -e 's/^/$/')" | tee "$tmpfile" > /dev/null
+mv "$tmpfile" /etc/php81/conf.d/custom.ini
+
+tmpfile=$(mktemp)
+cat /etc/php81/php-fpm.d/www.conf | envsubst "$(env | cut -d= -f1 | sed -e 's/^/$/')" | tee "$tmpfile" > /dev/null
+mv "$tmpfile" /etc/php81/php-fpm.d/www.conf
+echo "KONEC ENV"
