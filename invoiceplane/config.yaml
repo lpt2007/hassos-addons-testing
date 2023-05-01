@@ -1,12 +1,12 @@
 description: "Home Assistant addon with web server and PHP 8 for InvoicePlane"
 slug: "invoiceplane-addon"
-version: "0.0.105a"
+version: "0.0.106a"
 arch:
   - amd64
 init: false
 
-#options:
-#  document_root: /share/invoiceplane
+options:
+  document_root: /share/invoiceplane
 #  php_ini: default
 #  default_conf: default
 #  default_ssl_conf: default
@@ -15,8 +15,8 @@ init: false
 #  certfile: fullchain.pem
 #  keyfile: privkey.pem
 #  init_commands: []
-#schema:
-#  document_root: str
+schema:
+  document_root: str
 #  php_ini: str
 #  default_conf: str
 #  default_ssl_conf: str
