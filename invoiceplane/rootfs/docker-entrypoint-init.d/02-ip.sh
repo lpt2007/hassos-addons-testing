@@ -8,6 +8,7 @@ if [ -d /share/invoiceplane ]; then
       if [ -L /var/www/invoiceplane ]; then
         echo "Simbolična mapa obstsja."
       else  
+       echo "Simbolični link še ni ustvarjen."
        echo "Ustvarjam simbolično povezavo z mapo /var/www/invoiceplane."
        ln -s /share/invoiceplane /var/www/
          if [ -L /var/www/invoiceplane ]; then
