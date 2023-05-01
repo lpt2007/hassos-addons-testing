@@ -1,5 +1,5 @@
 ---
-version: 0.0.006a
+version: 0.0.007a
 hassio_api: true
 slug: nginx_n_php
 name: NGINX with PHP
