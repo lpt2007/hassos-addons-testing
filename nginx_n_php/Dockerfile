@@ -27,7 +27,8 @@ RUN apk add --no-cache nginx openssl \
                              php81-zip \
                              php81-simplexml \
                              php81-mbstring \
-                             php81-gd
+                             php81-gd \
+                             gettext # doda komado envsubst
                              #mailcap # dodal je datoteko /etc/mime.types vendar javi napako
 
 # Copy data
