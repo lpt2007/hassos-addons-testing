@@ -3,7 +3,7 @@
 
 if [ -d /share/invoiceplane ]; then
   if [ -f /share/invoiceplane/ipconfig.php ]; then
-    echo "Mapa /var/www/invoiceplane obstaja in datoteka ipconfig.php je prisotna."
+    echo "Mapa /share/invoiceplane obstaja in datoteka ipconfig.php je prisotna."
     echo "Preverjam ali simbolična mapa obstaja od prej."
       if [ -L /var/www/invoiceplane ]; then
         echo "Simbolična mapa obstsja."
