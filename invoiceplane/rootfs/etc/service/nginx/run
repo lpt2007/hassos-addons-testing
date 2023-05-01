@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-echo client_max_body_size=2M
+echo "client_max_body_size=2M"
 echo ${client_max_body_size}
 
 # Replace ENV vars in configuration files
