@@ -10,7 +10,7 @@ if [ -d /share/invoiceplane ]; then
       else  
        echo "Ustvarjam simbolično povezavo z mapo /var/www/invoiceplane."
        ln -s /share/invoiceplane /var/www/
-         if ln -s /share/invoiceplane /var/www/; then
+         if [ -L /var/www/invoiceplane ]; then
            echo "Simbolični link pravilno ustvarjen."
          else
          echo "Napaka: simbolični link ni bil ustvarjen."
