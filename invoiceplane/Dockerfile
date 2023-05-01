@@ -89,9 +89,9 @@ WORKDIR /var/www
 EXPOSE 8080
 
 # Let runit start nginx & php-fpm
-RUN chmod +x /bin/docker-entrypoint.sh
-CMD [ "/bin/docker-entrypoint.sh" ]
-
+#RUN chmod +x /bin/docker-entrypoint.sh
+#CMD [ "/bin/docker-entrypoint.sh" ]
+CMD [ "/init" ]
 # Configure a healthcheck to validate that everything is up&running
 HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping
 
