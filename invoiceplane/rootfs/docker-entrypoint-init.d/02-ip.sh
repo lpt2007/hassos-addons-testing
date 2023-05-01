@@ -35,7 +35,7 @@ if [ -d /share/invoiceplane ]; then
           else
             echo "Mapa /share/invoiceplane nima pravih dovoljenj."
             echo "NAPAKA"
-            exit 1
+            #exit 1
           fi
 
            echo "Nameščam..."
