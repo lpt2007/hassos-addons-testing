@@ -4,13 +4,18 @@
 if [ -d /var/www/invoiceplane ]; then
   if [ -f /var/www/invoiceplane/ipconfig.php ]; then
     echo "Mapa /var/www/invoiceplane obstaja in datoteka ipconfig.php je prisotna."
-    echo "Ustvarjam simbolično povezavo z mapo /var/www/invoiceplane."
-    ln -s /share/invoiceplane /var/www/
-    if ln -s /share/invoiceplane /var/www/; then
-     echo "Simbolični link pravilno ustvarjen."
-    else
-     echo "Napaka: simbolični link ni bil ustvarjen."
-    fi
+    echo "Preverjam ali simbolična mapa obstaja od prej."
+      if [ -L /var/www/invoiceplane ]; then
+        echo "Simbolična mapa obstsja."
+      else  
+       echo "Ustvarjam simbolično povezavo z mapo /var/www/invoiceplane."
+       ln -s /share/invoiceplane /var/www/
+         if ln -s /share/invoiceplane /var/www/; then
+           echo "Simbolični link pravilno ustvarjen."
+         else
+         echo "Napaka: simbolični link ni bil ustvarjen."
+         fi
+      fi
   else
     echo "Simbolična povezava /var/www/invoiceplane obstaja, vendar datoteka ipconfig.php ni prisotna."
   fi
