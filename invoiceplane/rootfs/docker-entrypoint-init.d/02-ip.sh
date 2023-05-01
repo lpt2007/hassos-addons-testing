@@ -81,6 +81,7 @@ else
   
 fi
 echo "KONEC"
+echo $client_max_body_size
 echo "VPIS ENV za NGINX"
 tmpfile=$(mktemp)
 cat /etc/nginx/nginx.conf | envsubst "$(env | cut -d= -f1 | sed -e 's/^/$/')" | tee "$tmpfile" > /dev/null
