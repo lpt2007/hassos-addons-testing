@@ -1,14 +1,14 @@
 #!/bin/sh
 #DocumentRoot=$(bashio::config 'document_root')
 
-if [ -L /var/www/html ]; then
-  if [ -f /var/www/html/ipconfig.php ]; then
-    echo "Simbolična povezava /var/www/html obstaja in datoteka ipconfig.php je prisotna."
+if [ -L /var/www/invoiceplane ]; then
+  if [ -f /var/www/invoiceplane/ipconfig.php ]; then
+    echo "Simbolična povezava /var/www/invoiceplane obstaja in datoteka ipconfig.php je prisotna."
   else
-    echo "Simbolična povezava /var/www/html obstaja, vendar datoteka ipconfig.php ni prisotna."
+    echo "Simbolična povezava /var/www/invoiceplane obstaja, vendar datoteka ipconfig.php ni prisotna."
   fi
 else
-  echo "Simbolična povezava /var/www/html ne obstaja."
+  echo "Simbolična povezava /var/www/invoiceplane ne obstaja."
   echo "InvoicePlane ni nameščen."
   echo "Trenutni uporabnik in skupina: $(id -un) $(id -gn)"
   
