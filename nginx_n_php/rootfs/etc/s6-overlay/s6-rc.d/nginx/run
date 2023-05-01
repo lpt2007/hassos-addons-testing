@@ -17,12 +17,20 @@ HSTS=$(bashio::config 'hsts')
 
 HA_PORT=$(bashio::core.port)
 
+if bashio::config.false 'ssl'; then
+  echo "SSL is disabled, skipping Generate dhparams."
+else
 # Generate dhparams
 if ! bashio::fs.file_exists "${DHPARAMS_PATH}"; then
     bashio::log.info  "Generating dhparams (this will take some time)..."
     openssl dhparam -dsaparam -out "$DHPARAMS_PATH" 4096 > /dev/null
 fi
+fi
 
+if bashio::config.false 'ssl'; then
+  echo "SSL is disabled, skipping Generate claudflare."
+else
+# Generate claudflare
 if bashio::config.true 'cloudflare'; then
     sed -i "s|#include /data/cloudflare.conf;|include /data/cloudflare.conf;|" /etc/nginx.conf
     # Generate cloudflare.conf
@@ -46,22 +54,26 @@ if bashio::config.true 'cloudflare'; then
         echo "real_ip_header CF-Connecting-IP;" >> $CLOUDFLARE_CONF;
     fi
 fi
+fi
 
-# Prepare config file without ssl
-# Replace ENV vars in configuration files
-bashio::log.info "client_max_body_size=${client_max_body_size}"
-tmpfile=$(mktemp)
-cat /etc/nginx-no-ssl.conf | envsubst "$(env | cut -d= -f1 | sed -e 's/^/$/')" | tee "$tmpfile" > /dev/null
-mv "$tmpfile" /etc/nginx-no-ssl.conf
+if bashio::config.false 'ssl'; then
+  echo "SSL is disabled, prepare nginx.conf without ssl."
+  # Prepare config file without ssl
+  # Replace ENV vars in configuration files
+  bashio::log.info "client_max_body_size=${client_max_body_size}"
+  tmpfile=$(mktemp)
+  cat /etc/nginx-no-ssl.conf | envsubst "$(env | cut -d= -f1 | sed -e 's/^/$/')" | tee "$tmpfile" > /dev/null
+  mv "$tmpfile" /etc/nginx-no-ssl.conf
+else
+  # Prepare config file for ssl
+  sed -i "s#%%FULLCHAIN%%#$CERTFILE#g" /etc/nginx.conf
+  sed -i "s#%%PRIVKEY%%#$KEYFILE#g" /etc/nginx.conf
+  sed -i "s/%%DOMAIN%%/$DOMAIN/g" /etc/nginx.conf
+  sed -i "s/%%HA_PORT%%/$HA_PORT/g" /etc/nginx.conf
 
-# Prepare config file for ssl
-sed -i "s#%%FULLCHAIN%%#$CERTFILE#g" /etc/nginx.conf
-sed -i "s#%%PRIVKEY%%#$KEYFILE#g" /etc/nginx.conf
-sed -i "s/%%DOMAIN%%/$DOMAIN/g" /etc/nginx.conf
-sed -i "s/%%HA_PORT%%/$HA_PORT/g" /etc/nginx.conf
-
-[ -n "$HSTS" ] && HSTS="add_header Strict-Transport-Security \"$HSTS\" always;"
-sed -i "s/%%HSTS%%/$HSTS/g" /etc/nginx.conf
+  [ -n "$HSTS" ] && HSTS="add_header Strict-Transport-Security \"$HSTS\" always;"
+  sed -i "s/%%HSTS%%/$HSTS/g" /etc/nginx.conf
+fi
 
 # Allow customize configs from share
 if bashio::config.true 'customize.active'; then
@@ -73,8 +85,6 @@ fi
 
 # start server
 bashio::log.info "Running nginx..."
-#org stat "/ssl/${CERTFILE}" -c %y > /tmp/certificate_timestamp
-#its
 if bashio::config.false 'ssl'; then
   echo "SSL is disabled, skipping certificate check."
   exec nginx -c /etc/nginx-no-ssl.conf < /dev/null
@@ -82,4 +92,3 @@ else
   stat "/ssl/${CERTFILE}" -c %y > /tmp/certificate_timestamp
   exec nginx -c /etc/nginx.conf < /dev/null
 fi
-#its
