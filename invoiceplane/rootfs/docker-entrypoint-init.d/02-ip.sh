@@ -77,6 +77,7 @@ if [ -d /share/invoiceplane ]; then
   fi
 else
   echo "Mapa /share/invoiceplane ne obstaja."
+  echo "Prosim ustvarite jo znotra ssh addon-a z ukazom mkdir -p /share/invoiceplane && chown -R nobody:nobody /share/invoiceplane"
   
 fi
 echo "KONEC"
