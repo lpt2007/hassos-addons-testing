@@ -1,8 +1,8 @@
 #!/bin/sh
 #DocumentRoot=$(bashio::config 'document_root')
 
-if [ -d /var/www/invoiceplane ]; then
-  if [ -f /var/www/invoiceplane/ipconfig.php ]; then
+if [ -d /share/invoiceplane ]; then
+  if [ -f /share/invoiceplane/ipconfig.php ]; then
     echo "Mapa /var/www/invoiceplane obstaja in datoteka ipconfig.php je prisotna."
     echo "Preverjam ali simbolična mapa obstaja od prej."
       if [ -L /var/www/invoiceplane ]; then
@@ -20,7 +20,7 @@ if [ -d /var/www/invoiceplane ]; then
     echo "Simbolična povezava /var/www/invoiceplane obstaja, vendar datoteka ipconfig.php ni prisotna."
   fi
 else
-  echo "Simbolična povezava /var/www/invoiceplane ne obstaja."
+  echo "Mapa /share/invoiceplane ne obstaja."
   echo "InvoicePlane ni nameščen."
   echo "Trenutni uporabnik in skupina: $(id -un) $(id -gn)"
   
