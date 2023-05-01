@@ -82,3 +82,4 @@ else
     fi
   
 fi
+echo "KONEC"
