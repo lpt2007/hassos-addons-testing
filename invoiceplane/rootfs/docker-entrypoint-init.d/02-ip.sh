@@ -30,7 +30,7 @@ if [ -d /share/invoiceplane ]; then
             exit 1
           fi
   
-          if [ "$(stat -c '%U:%G:%a' /share/invoiceplane)" = "nobody:nobody:777" ]; then
+          if [ "$(stat -c '%U:%G:%a' /share/invoiceplane)" = "nobody:nobody:755" ]; then
             echo "Mapa /share/invoiceplane ima prava dovoljenja."
           else
             echo "Mapa /share/invoiceplane nima pravih dovoljenj."
