@@ -6,7 +6,6 @@
 
 set -e
 
-# start server
 # Replace ENV vars in configuration files
 tmpfile=$(mktemp)
 cat /etc/php81/conf.d/custom.ini | envsubst "$(env | cut -d= -f1 | sed -e 's/^/$/')" | tee "$tmpfile" > /dev/null
@@ -16,4 +15,5 @@ tmpfile=$(mktemp)
 cat /etc/php81/php-fpm.d/www.conf | envsubst "$(env | cut -d= -f1 | sed -e 's/^/$/')" | tee "$tmpfile" > /dev/null
 mv "$tmpfile" /etc/php81/php-fpm.d/www.conf
 
+# start server
 exec php-fpm81 -F
