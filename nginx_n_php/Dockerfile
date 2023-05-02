@@ -34,6 +34,9 @@ RUN apk add --no-cache nginx openssl \
 # Copy data
 COPY rootfs /
 
+# Set rights for user nginx:www-data
+RUN chown -R nginx:www-data /var/www
+
 WORKDIR /
 
 ENV client_max_body_size=2M \
