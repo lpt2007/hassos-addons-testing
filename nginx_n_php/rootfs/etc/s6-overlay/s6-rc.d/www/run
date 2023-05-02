@@ -1,0 +1,11 @@
+
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Start php service
+# ==============================================================================
+
+set -e
+
+# connect shaer folder with web server
+ln -s /share/html /var/www/
