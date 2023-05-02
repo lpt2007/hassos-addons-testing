@@ -1,7 +1,7 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Start nginx service
+# Start php service
 # ==============================================================================
 
 set -e
