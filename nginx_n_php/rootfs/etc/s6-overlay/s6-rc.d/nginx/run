@@ -7,7 +7,6 @@
 set -e
 
 # start server
-bashio::log.info "Running nginx..."
 if bashio::config.false 'ssl'; then  
   bashio::log.info "SSL is disabled, start without ssl."
 
@@ -19,6 +18,7 @@ if bashio::config.false 'ssl'; then
   cat /etc/nginx-no-ssl.conf | envsubst "$(env | cut -d= -f1 | sed -e 's/^/$/')" | tee "$tmpfile" > /dev/null
   mv "$tmpfile" /etc/nginx-no-ssl.conf
   
+  bashio::log.info "Running nginx..."
   exec nginx -c /etc/nginx-no-ssl.conf < /dev/null
 else
 
