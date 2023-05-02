@@ -1,8 +1,7 @@
-Supported Platforms:
+_Supported Platforms:_
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
 
-[![Supports aarch64 Architecture](https://camo.githubusercontent.com/dd162ecbb0da6ee78fab7c278a1dba2c119748355209ef7df70ef2fbe0e9cb0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f616172636836342d7965732d677265656e2e737667)](https://camo.githubusercontent.com/dd162ecbb0da6ee78fab7c278a1dba2c119748355209ef7df70ef2fbe0e9cb0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f616172636836342d7965732d677265656e2e737667)  [![Supports amd64 Architecture](https://camo.githubusercontent.com/ce3c356720b2ae8a384979d7c8ed54b7086b3e88dbdd86678f98599477ffcbb2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f616d6436342d7965732d677265656e2e737667)](https://camo.githubusercontent.com/ce3c356720b2ae8a384979d7c8ed54b7086b3e88dbdd86678f98599477ffcbb2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f616d6436342d7965732d677265656e2e737667)  [![Supports armhf Architecture](https://camo.githubusercontent.com/1ab49669175fb895552f0fe9ec425a3fdf5ee4fa3bb1148329fabe9b8801c72b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f61726d68662d7965732d677265656e2e737667)](https://camo.githubusercontent.com/1ab49669175fb895552f0fe9ec425a3fdf5ee4fa3bb1148329fabe9b8801c72b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f61726d68662d7965732d677265656e2e737667)  [![Supports armv7 Architecture](https://camo.githubusercontent.com/b9668a1002121b334b9920a2b7750d3ea2eb82d040323a7f8930c234b56f56ef/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f61726d76372d7965732d677265656e2e737667)](https://camo.githubusercontent.com/b9668a1002121b334b9920a2b7750d3ea2eb82d040323a7f8930c234b56f56ef/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f61726d76372d7965732d677265656e2e737667)  [![Supports i386 Architecture](https://camo.githubusercontent.com/381b99aef5441b654e7356f2908b2d0f8646c5a7914b14f883c8fd3478912ebd/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f693338362d7965732d677265656e2e737667)](https://camo.githubusercontent.com/381b99aef5441b654e7356f2908b2d0f8646c5a7914b14f883c8fd3478912ebd/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f693338362d7965732d677265656e2e737667)
-
-**How to use this addon:**
+**How to use this addon**
  1. Start this add-on.
  2. Install [SSH addon](https://github.com/hassio-addons/addon-ssh)
  3. Configure [SSH addon](https://github.com/hassio-addons/addon-ssh) and start it.
@@ -10,3 +9,9 @@ Supported Platforms:
  5. Copy your web site to `/share/html` folder.
  
  Enjoy.
+ 
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
