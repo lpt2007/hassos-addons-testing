@@ -10,9 +10,11 @@ set -e
 bashio::log.info "Running nginx..."
 if bashio::config.false 'ssl'; then  
   bashio::log.info "SSL is disabled, start without ssl."
-  # Prepare config file without ssl
-  # Replace ENV vars in configuration files
+
   bashio::log.info "client_max_body_size=${client_max_body_size}"
+  
+  # Prepare config file without ssl
+  # Replace ENV vars in configuration files  
   tmpfile=$(mktemp)
   cat /etc/nginx-no-ssl.conf | envsubst "$(env | cut -d= -f1 | sed -e 's/^/$/')" | tee "$tmpfile" > /dev/null
   mv "$tmpfile" /etc/nginx-no-ssl.conf
