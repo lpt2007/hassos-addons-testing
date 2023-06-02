@@ -27,6 +27,9 @@ homeassistant:
     - aarch64
     - amd64
     - armv7
+# omogoči dostop do grafike in zvoka
+audio: true
+video: true
 # Define the devices required by the add-on
 devices:
   - /dev/dri
