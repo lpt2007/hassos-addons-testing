@@ -13,4 +13,5 @@ RUN apk add --no-cache kodi \
 
 EXPOSE 8080
 
-ENTRYPOINT [ "kodi", "--standalone", "--desktop" ]
+#ENTRYPOINT [ "kodi", "--standalone", "--desktop" ]
+ENTRYPOINT ["/bin/bash", "-c", "kodi"]
