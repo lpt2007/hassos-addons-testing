@@ -1,6 +1,7 @@
 ---
 stage: experimental
-version: 0.0.001a
+version: 0.0.002a
+full_access: true
 hassio_api: true
 slug: kodi-base-alpine
 name: KODI with AV
