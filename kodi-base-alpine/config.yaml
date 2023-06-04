@@ -1,0 +1,18 @@
+---
+stage: experimental
+version: 0.0.001a
+hassio_api: true
+slug: kodi-base-alpine
+name: KODI with AV
+description: KODI with AUDIO and HARDWARE VIDEO ACCELERATION
+url: https://github.com/lpt2007/hassos-addons-testing/tree/main/kodi-base-alpine
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+init: false
+map:
+  - ssl
+  - share:rw
