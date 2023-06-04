@@ -45,7 +45,7 @@ RUN chown -R nginx:www-data /var/www
 
 # create directory session for php session
 RUN mkdir -p /var/lib/php81/session && \
-    chown -R nginx:www-data /var/lib/php8/session
+    chown -R nginx:www-data /var/lib/php81/session
 
 # Set the session save path in php.ini
 RUN echo "session.save_path = /var/lib/php81/session" >> /etc/php81/php.ini
