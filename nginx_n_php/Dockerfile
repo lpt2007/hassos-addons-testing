@@ -44,7 +44,7 @@ RUN chmod a+x /etc/cont-init.d/01-create-symlink
 RUN chown -R nginx:www-data /var/www
 
 # Set the session save path in php.ini
-RUN echo "session.save_path = /path/to/session/directory" >> /etc/php8/php.ini
+RUN echo "session.save_path = /var/lib/php8/session" >> /etc/php81/php.ini
 
 WORKDIR /
 
