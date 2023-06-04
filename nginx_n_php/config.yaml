@@ -1,6 +1,6 @@
 ---
 stage: experimental
-version: 0.0.030a
+version: 0.0.031a
 hassio_api: true
 slug: nginx_n_php
 name: NGINX with PHP
