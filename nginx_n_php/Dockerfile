@@ -42,6 +42,9 @@ RUN chmod a+x /etc/cont-init.d/01-create-symlink
 # Set rights for user nginx:www-data
 RUN chown -R nginx:www-data /var/www
 
+# Set the session save path in php.ini
+RUN echo "session.save_path = /path/to/session/directory" >> /etc/php8/php.ini
+
 WORKDIR /
 
 ENV client_max_body_size=2M \
