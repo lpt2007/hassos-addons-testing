@@ -5,7 +5,7 @@ FROM $BUILD_FROM
 RUN apk add --no-cache kodi
 
 # Copy data
-COPY rootfs /
+#COPY rootfs /
 
 # default folder
 WORKDIR /
