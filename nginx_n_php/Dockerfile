@@ -43,6 +43,10 @@ RUN chmod a+x /etc/cont-init.d/01-create-symlink
 # Set rights for user nginx:www-data
 RUN chown -R nginx:www-data /var/www
 
+# create directory session for php session
+RUN mkdir -p /var/lib/php81/session && \
+    chown -R nginx:www-data /var/lib/php8/session
+
 # Set the session save path in php.ini
 RUN echo "session.save_path = /var/lib/php81/session" >> /etc/php81/php.ini
 
