@@ -1,6 +1,6 @@
 ---
 stage: experimental
-version: 0.0.003a
+version: 0.0.004a
 full_access: true
 hassio_api: true
 slug: kodi-base-alpine
@@ -14,6 +14,10 @@ arch:
   - amd64
   - i386
 init: false
+audio: true
+video: true
+devices:
+  - /dev/fb0
 map:
   - ssl
   - share:rw
