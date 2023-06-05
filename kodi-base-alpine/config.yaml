@@ -1,6 +1,6 @@
 ---
 stage: experimental
-version: 0.0.002a
+version: 0.0.003a
 full_access: true
 hassio_api: true
 slug: kodi-base-alpine
